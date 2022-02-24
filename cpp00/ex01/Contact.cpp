@@ -5,13 +5,13 @@
 
 Contact::Contact()
 {
-    std::cout << "contact builder" << std::endl;
+    // std::cout << "contact builder" << std::endl;
     return ;
 }
 
 Contact::~Contact()
 {
-    std::cout << "contact destructor" << std::endl;
+    // std::cout << "contact destructor" << std::endl;
     return ;
 }
 
@@ -44,17 +44,12 @@ int Contact::set_contact()
         std::cin >> cmd;
     info[4] = cmd;
     cmd = "";
-    std::cout << info[0] << std::endl;
-    std::cout << info[1] << std::endl;
-    std::cout << info[2] << std::endl;
-    std::cout << info[3] << std::endl;
-    std::cout << info[4] << std::endl;
     return (0);
 }
 
 std::string    Contact::give_info(int idx)
 {
-    return info[idx];
+    return (info[idx]);
 }
 
 void        Contact::print_tab(int idx)
