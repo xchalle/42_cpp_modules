@@ -30,10 +30,13 @@ void    PhoneBook::print_phonebook(int idx)
     {
         std::cout.width(10);
         std::cout << i << "|";
+        std::cout.width(10);
         contact[i].print_tab(0);
         std::cout << "|";
+        std::cout.width(10);
         contact[i].print_tab(1);
         std::cout << "|";
+        std::cout.width(10);
         contact[i].print_tab(2);
         std::cout <<"|" << std::endl;
         i++;
@@ -59,6 +62,7 @@ void    PhoneBook::print_index(int idx)
         std::cout << "INDEX NEEDED:" << std::endl;
         std::cin >> cmd;
     }
+    std::cout << "FDLSKFLSKFLDKS:" << std::endl;
     nbr = atoi(cmd.c_str());
     std::cout << "FIRST NAME: ";
     std::cout << contact[nbr].give_info(0) << std::endl;

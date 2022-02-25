@@ -13,6 +13,8 @@ int main()
     {
         std::cin >> cmd;
         // std::cout << cmd <<std::endl;
+        if (idx == 7)
+            idx = 0;
         if (std::cin.eof())
         {
             std::cout << "exit" << std::endl;

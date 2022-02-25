@@ -1,0 +1,3 @@
+keep the idx upp to 7 for pphonebook
+SEARCH choice idx good
+
