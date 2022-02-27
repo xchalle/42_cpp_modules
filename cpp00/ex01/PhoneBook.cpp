@@ -47,23 +47,23 @@ void    PhoneBook::print_phonebook(int idx)
 void    PhoneBook::print_index(int idx)
 {
     std::string cmd;
-    std::ostringstream o_tmp;
-    std::string tmp;   
     int nbr;
 
-    o_tmp << idx;
-    tmp = o_tmp.str();
-    std::cout << tmp << std::endl;
     std::cout << "INDEX NEEDED:" << std::endl;
-    std::cin >> cmd;
-    while(cmd.compare("") == 0 || (cmd.compare("0") < 0 || cmd.compare(tmp) >= 0))
+    std::getline(std::cin, cmd);
+    if (std::cin.eof())
+        return ;
+    if (cmd.find_first_not_of("0123456789") < 2147483647)
     {
-        std::cout << "INDEX NOT VALID !" << std::endl;
-        std::cout << "INDEX NEEDED:" << std::endl;
-        std::cin >> cmd;
+        std::cout << "INDEX NOT VALID" << std::endl << "BACK TO MAIN MENU:" << std::endl;
+        return ;
     }
-    std::cout << "FDLSKFLSKFLDKS:" << std::endl;
     nbr = atoi(cmd.c_str());
+    if (nbr >= idx)
+    {
+        std::cout << "INDEX NOT VALID" << std::endl << "BACK TO MAIN MENU:" << std::endl;
+        return ;
+    }
     std::cout << "FIRST NAME: ";
     std::cout << contact[nbr].give_info(0) << std::endl;
     std::cout << "LAST NAME: ";

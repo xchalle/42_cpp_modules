@@ -21,27 +21,27 @@ int Contact::set_contact()
 
     std::cout << "FIRST NAME:" <<std::endl;
     while(cmd.compare("") == 0)
-        std::cin >> cmd;
+        std::getline(std::cin, cmd);
     info[0] = cmd;
-    cmd = "";
     std::cout << "LAST NAME:" <<std::endl;
-    while(cmd.compare("") == 0)
-        std::cin >> cmd;
-    info[1] = cmd;
     cmd = "";
-        std::cout << "NICNAME:" <<std::endl;
     while(cmd.compare("") == 0)
-        std::cin >> cmd;
+        std::getline(std::cin, cmd);
+    info[1] = cmd;
+        std::cout << "NICNAME:" <<std::endl;
+    cmd = "";
+    while(cmd.compare("") == 0)
+        std::getline(std::cin, cmd);
     info[2] = cmd;
     cmd = "";
         std::cout << "NUMBER:" <<std::endl;
     while(cmd.compare("") == 0)
-        std::cin >> cmd;
+        std::getline(std::cin, cmd);
     info[3] = cmd;
     cmd = "";
         std::cout << "DARKEST SECRET:" <<std::endl;
     while(cmd.compare("") == 0)
-        std::cin >> cmd;
+        std::getline(std::cin, cmd);
     info[4] = cmd;
     cmd = "";
     return (0);
