@@ -6,27 +6,27 @@
 #    By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/14 13:55:04 by xchalle           #+#    #+#              #
-#    Updated: 2021/10/22 10:54:27 by xchalle          ###   ########.fr        #
+#    Updated: 2022/02/28 15:52:58 by xchalle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC = 	megaphone.cpp \
 
-NAME = PhoneBook
+NAME = megaphone
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+XXFLAGS = -Wall -Werror -Wextra -std=c++98
 
-CC = c++ $(CFLAGS)
+XX = c++ $(XXFLAGS)
 
 OBJ = $(SRC:.cpp=.o)
 
 all:	$(NAME)
 
 $(%.o): $(%.cpp)
-	$(CC) -o $@ -c $^
+	$(XX) -o $@ -c $^
 
 $(NAME): $(OBJ)
-		$(CC) -o $@ $^
+		$(XX) -o $@ $^
 
 clean:
 		rm -f $(OBJ)
