@@ -20,28 +20,40 @@ int Contact::set_contact()
     std::string cmd;
 
     std::cout << "FIRST NAME:" <<std::endl;
-    while(cmd.compare("") == 0)
+    while(cmd.compare("") == 0 && (!(std::cin.eof())))
         std::getline(std::cin, cmd);
+    if (std::cin.eof())
+        return (1);
     info[0] = cmd;
     std::cout << "LAST NAME:" <<std::endl;
     cmd = "";
-    while(cmd.compare("") == 0)
+    while(cmd.compare("") == 0 && (!(std::cin.eof())))
         std::getline(std::cin, cmd);
+    if (std::cin.eof())
+        return (1);
     info[1] = cmd;
         std::cout << "NICNAME:" <<std::endl;
     cmd = "";
-    while(cmd.compare("") == 0)
+    if (std::cin.eof())
+        return (1);
+    while(cmd.compare("") == 0 && (!(std::cin.eof())))
         std::getline(std::cin, cmd);
+    if (std::cin.eof())
+        return (1);
     info[2] = cmd;
     cmd = "";
         std::cout << "NUMBER:" <<std::endl;
-    while(cmd.compare("") == 0)
+    while(cmd.compare("") == 0 && (!(std::cin.eof())))
         std::getline(std::cin, cmd);
+    if (std::cin.eof())
+        return (1);
     info[3] = cmd;
     cmd = "";
         std::cout << "DARKEST SECRET:" <<std::endl;
-    while(cmd.compare("") == 0)
+    while(cmd.compare("") == 0 && (!(std::cin.eof())))
         std::getline(std::cin, cmd);
+    if (std::cin.eof())
+        return (1);
     info[4] = cmd;
     cmd = "";
     return (0);

@@ -16,7 +16,8 @@ PhoneBook::~PhoneBook()
 
 int     PhoneBook::set_contact(int idx)
 {
-    contact[idx].set_contact();
+    if (contact[idx].set_contact() == 1)
+        return (-1);
     idx++;
     return (idx);
 }

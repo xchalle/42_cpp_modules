@@ -25,6 +25,11 @@ int main()
         if (cmd.compare("ADD") == 0)
         {
             idx = book.set_contact(idx);
+            if (idx == -1)
+                {
+                    std::cout << "EXIT" << std::endl;
+                    return (0); 
+                }
             if (compteur < 8)
                 compteur++;
         }
@@ -33,7 +38,7 @@ int main()
             book.print_phonebook(compteur);
             book.print_index(compteur);
         }
-        else if (cmd.compare("EXIT") == 0 || cmd.compare("") == 0)
+        else if (cmd.compare("EXIT") == 0)
         {
             std::cout << "EXIT" << std::endl;
             return (0);
