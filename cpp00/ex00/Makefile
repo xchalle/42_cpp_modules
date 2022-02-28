@@ -10,9 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRC = 	Contact.cpp \
-		main.cpp \
-		PhoneBook.cpp \
+SRC = 	megaphone.cpp \
 
 NAME = PhoneBook
 
