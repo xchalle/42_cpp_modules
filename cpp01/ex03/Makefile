@@ -6,15 +6,16 @@
 #    By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/14 13:55:04 by xchalle           #+#    #+#              #
-#    Updated: 2022/03/01 15:36:02 by xchalle          ###   ########.fr        #
+#    Updated: 2022/03/01 16:11:59 by xchalle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = 	Zombie.cpp \
-		main.cpp \
-		zombieHorde.cpp \
+SRC =	main.cpp \
+	Weapon.cpp \
+	HumanA.cpp \
+	HumanB.cpp \
 
-NAME = Zombie
+NAME = Weapon
 
 XXFLAGS = -Wall -Werror -Wextra -std=c++98
 
