@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 12:47:58 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/03 16:44:00 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/07 12:17:42 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,12 @@ class	Fixed
 		Fixed(const float fval);
 		Fixed(const Fixed &fixed);
 		Fixed &operator=(const Fixed &fixed);
-		std::ostream	&operator<<(std::ostream cout);
+		bool operator ==(const Fixed &b) const;
+		bool operator !=(const Fixed &b) const;
+		bool operator <(const Fixed &b) const;
+		bool operator >(const Fixed &b) const;
+		bool operator <=(const Fixed &b) const;
+		bool operator >=(const Fixed &b) const;	
 		~Fixed();
 		int	getRawBits( void ) const;
 		void	setRawBits( int const raw);
@@ -36,5 +41,7 @@ class	Fixed
 		int	fp_number;
 		static const int	nb_fra = 8;
 };
+
+std::ostream	&operator<<(std::ostream &cout, const Fixed &fixed);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:04:58 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/03 16:43:28 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/07 12:26:22 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,12 @@ Fixed::Fixed()
 Fixed::Fixed(const int val) : fp_number(val << 8)
 {
 	std::cout << "Int constructor called" << std::endl;
-	fp_number = 0;
 	return ;
 }
 
-Fixed::Fixed(const float fval) : fp_number(roundf(val * 256))
+Fixed::Fixed(const float fval) : fp_number(roundf(fval * 256))
 {
 	std::cout << "Float constructor called" << std::endl;
-	fp_number = 0;
 	return ;
 }
 
@@ -56,9 +54,9 @@ Fixed	&Fixed::operator=( const Fixed &fixed)
 	return  *this;
 }
 
-std::ostream&	Fixed::operator<<(std::ostream& stream)
+std::ostream&	operator<<(std::ostream& stream, const Fixed &fixed)
 {
-	stream << (float)fp_number/256;
+	stream << fixed.toFloat();
 	return (stream);
 }
 
@@ -75,12 +73,50 @@ int	Fixed::getRawBits( void ) const
 	return (fp_number);
 }
 
-int	toInt() const
+int	Fixed::toInt() const
 {
-	return (fp_number);
+	return (fp_number/256);
 }
 
-float	toFloat() const
+float	Fixed::toFloat() const
 {
 	return ((float)fp_number/256);
 }
+
+bool Fixed::operator ==(const Fixed &b) const
+{
+	if (fp_number == b.fp_number)
+		return (true);
+	return (false);
+}
+bool Fixed::operator !=(const Fixed &b) const
+{
+	if (fp_number != b.fp_number)
+		return (true);
+	return (false);
+}
+bool Fixed::operator <(const Fixed &b) const
+{
+	if (fp_number < b.fp_number)
+		return (true);
+	return (false);
+}
+bool Fixed::operator >(const Fixed &b) const
+{
+	if (fp_number > b.fp_number)
+		return (true);
+	return (false);
+}
+bool Fixed::operator <=(const Fixed &b) const
+{
+	if (fp_number <= b.fp_number)
+		return (true);
+	return (false);
+}
+bool Fixed::operator >=(const Fixed &b) const
+{
+	if (fp_number >= b.fp_number)
+		return (true);
+	return (false);
+}
+bool T::operator ==(const T2 &b) const;	

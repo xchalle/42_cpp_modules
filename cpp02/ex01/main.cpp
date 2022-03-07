@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:05:06 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/03 16:41:38 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/07 11:50:34 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ int main( void )
 	a = Fixed( 1234.4321f );
 
 	std::cout << "a is " << a << std::endl;
-//	std::cout << "b is " << b << std::endl;
-//	std::cout << "c is " << c << std::endl;
-//	std::cout << "d is " << d << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
 
 	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
