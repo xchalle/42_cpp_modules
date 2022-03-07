@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 12:47:58 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/07 13:43:22 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/07 15:07:45 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,29 @@ class	Fixed
 		Fixed(const float fval);
 		Fixed(const Fixed &fixed);
 		Fixed &operator=(const Fixed &fixed);
+		bool operator ==(const Fixed &b) const;
+		bool operator !=(const Fixed &b) const;
+		bool operator <(const Fixed &b) const;
+		bool operator >(const Fixed &b) const;
+		bool operator <=(const Fixed &b) const;
+		bool operator >=(const Fixed &b) const;	
+		Fixed operator+(const Fixed &b) const;
+		Fixed operator-(const Fixed &b) const;
+		Fixed operator*(const Fixed &b) const;
+		Fixed operator/(const Fixed &b) const; 
+		Fixed& operator++();
+		Fixed& operator--();
+		Fixed operator++(int);
+		Fixed operator--(int);
 		~Fixed();
-		int	getRawBits( void ) const;
-		void	setRawBits( int const raw);
-		float	toFloat( void ) const;
-		int	toInt( void ) const;
+		static Fixed		&min(Fixed &a, Fixed &b);
+		static const Fixed	&min(const Fixed &a, const Fixed &b);
+		static Fixed		&max(Fixed &a, Fixed &b);
+		static const Fixed	&max(const Fixed  &a, const Fixed &b);
+		int			getRawBits( void ) const;
+		void			setRawBits( int const raw);
+		float			toFloat( void ) const;
+		int			toInt( void ) const;
 
 	private:
 		int	fp_number;

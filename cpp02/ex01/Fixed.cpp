@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:04:58 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/07 12:26:22 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/07 13:43:08 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ Fixed::Fixed( const Fixed &fixed)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = fixed;
-	//fp_number = fixed.fp_number;
-	//nb_fra = fixed.nb_fra;
 	return ;
 }
 
@@ -82,41 +80,3 @@ float	Fixed::toFloat() const
 {
 	return ((float)fp_number/256);
 }
-
-bool Fixed::operator ==(const Fixed &b) const
-{
-	if (fp_number == b.fp_number)
-		return (true);
-	return (false);
-}
-bool Fixed::operator !=(const Fixed &b) const
-{
-	if (fp_number != b.fp_number)
-		return (true);
-	return (false);
-}
-bool Fixed::operator <(const Fixed &b) const
-{
-	if (fp_number < b.fp_number)
-		return (true);
-	return (false);
-}
-bool Fixed::operator >(const Fixed &b) const
-{
-	if (fp_number > b.fp_number)
-		return (true);
-	return (false);
-}
-bool Fixed::operator <=(const Fixed &b) const
-{
-	if (fp_number <= b.fp_number)
-		return (true);
-	return (false);
-}
-bool Fixed::operator >=(const Fixed &b) const
-{
-	if (fp_number >= b.fp_number)
-		return (true);
-	return (false);
-}
-bool T::operator ==(const T2 &b) const;	

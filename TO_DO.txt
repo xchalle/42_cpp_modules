@@ -1,0 +1,1 @@
+change static int in cpp02 pas dans la class mais dans le .cpp
