@@ -14,20 +14,26 @@ PhoneBook::~PhoneBook()
     return ;
 }
 
-int     PhoneBook::set_contact(int idx)
+int     PhoneBook::set_contact()
 {
-    if (contact[idx].set_contact() == 1)
-        return (-1);
-    idx++;
-    return (idx);
+	if (idx == 8)
+		idx = 0;
+	if (contact[idx].set_contact() == 1)
+		return (-1);
+	idx++;
+	if (total_idx < 8)
+		total_idx++;
+	return (idx);
 }
 
-void    PhoneBook::print_phonebook(int idx)
+void    PhoneBook::print_phonebook()
 {
     int i;
 
     i = 0;
-    while (i < idx)
+        std::cout.width(30);
+        std::cout <<"===PHONEBOOK===" << std::endl;
+    while (i < total_idx)
     {
         std::cout.width(10);
         std::cout << i << "|";
@@ -45,7 +51,7 @@ void    PhoneBook::print_phonebook(int idx)
     return ;
 }
 
-void    PhoneBook::print_index(int idx)
+void    PhoneBook::print_index()
 {
     std::string cmd;
     int nbr;
@@ -60,7 +66,7 @@ void    PhoneBook::print_index(int idx)
         return ;
     }
     nbr = atoi(cmd.c_str());
-    if (nbr >= idx)
+    if (nbr >= total_idx)
     {
         std::cout << "INDEX NOT VALID" << std::endl << "BACK TO MAIN MENU:" << std::endl;
         return ;
@@ -76,3 +82,6 @@ void    PhoneBook::print_index(int idx)
     std::cout << "DARKEST SECRET: ";
     std::cout << contact[nbr].give_info(4) << std::endl;
 }
+
+unsigned int PhoneBook::total_idx=0;
+unsigned int PhoneBook::idx=0;

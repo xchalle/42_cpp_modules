@@ -7,11 +7,13 @@ class PhoneBook
 
         PhoneBook();
         ~PhoneBook();
-        int     set_contact(int idx);
-        void    print_phonebook(int idx);
-        void    print_index(int idx);
+        int     set_contact();
+        void    print_phonebook();
+        void    print_index();
 
     private :
 
         Contact contact[8];
+	static unsigned int	total_idx;
+	static unsigned	int	idx;
 };

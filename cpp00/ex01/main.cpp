@@ -15,8 +15,6 @@ int main()
     {
         std::cout << ">" << std::flush;
         std::getline(std::cin, cmd);
-        if (idx == 8)
-            idx = 0;
         if (std::cin.eof())
         {
             std::cout << "EXIT" << std::endl;
@@ -24,19 +22,16 @@ int main()
         }
         if (cmd.compare("ADD") == 0)
         {
-            idx = book.set_contact(idx);
-            if (idx == -1)
+            if (book.set_contact()== -1)
                 {
                     std::cout << "EXIT" << std::endl;
                     return (0); 
                 }
-            if (compteur < 8)
-                compteur++;
         }
         else if (cmd.compare("SEARCH") == 0)
         {
-            book.print_phonebook(compteur);
-            book.print_index(compteur);
+            book.print_phonebook();
+            book.print_index();
         }
         else if (cmd.compare("EXIT") == 0)
         {
