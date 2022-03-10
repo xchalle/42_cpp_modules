@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 15:18:57 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/10 17:25:08 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/10 18:25:00 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ bool    Account::makeWithdrawal(int withdrawal)
     if (withdrawal <= _amount)
     {
         _amount = _amount - withdrawal;
-        std::cout << "withdrawals:" << withdrawal << ";";
+        std::cout << "withdrawal:" << withdrawal << ";";
         std::cout << "amount:" << _amount << ";";
         _nbWithdrawals++;
         std::cout << "nb_withdrawals:" << _nbWithdrawals << std::endl;
@@ -104,7 +104,7 @@ bool    Account::makeWithdrawal(int withdrawal)
     	_totalAmount -= withdrawal;
         return (true);
     }
-    std::cout << "withdrawals:refused" << std::endl;
+    std::cout << "withdrawal:refused" << std::endl;
     return (false);
 }
 
@@ -129,4 +129,5 @@ void	Account::_displayTimestamp( void )
     std::cout << std::setfill ('0') << std::setw (2);
     std::cout << test->tm_sec;
     std::cout << "]";
+    std::cout << " ";
 }
