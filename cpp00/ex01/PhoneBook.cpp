@@ -33,8 +33,25 @@ void    PhoneBook::print_phonebook()
     i = 0;
         std::cout.width(30);
         std::cout <<"===PHONEBOOK===" << std::endl;
+	for (int o = 0; o < 45; o++)
+		std::cout << "=";
+	std::cout << std::endl;
+        std::cout << "|";
+        std::cout.width(10);
+        std::cout << "INDEX" << "|";
+        std::cout.width(10);
+        std::cout << "FIRST NAME" << "|";
+        std::cout.width(10);
+        std::cout << "LAST NAME" << "|";
+        std::cout.width(10);
+        std::cout << "NICKNAME" << "|";
+        std::cout << std::endl;
+	for (int o = 0; o < 45; o++)
+		std::cout << "=";
+        std::cout << std::endl;
     while (i < total_idx)
     {
+        std::cout << "|";
         std::cout.width(10);
         std::cout << i << "|";
         std::cout.width(10);
@@ -46,6 +63,9 @@ void    PhoneBook::print_phonebook()
         std::cout.width(10);
         contact[i].print_tab(2);
         std::cout <<"|" << std::endl;
+	for (int o = 0; o < 45; o++)
+		std::cout << "-";
+        std::cout << std::endl;
         i++;
     }
     return ;
