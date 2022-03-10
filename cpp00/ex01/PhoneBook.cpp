@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/10 15:18:18 by xchalle           #+#    #+#             */
+/*   Updated: 2022/03/10 17:31:29 by xchalle          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PhoneBook.hpp"
 #include <iostream>
 #include <sstream>
@@ -101,8 +113,8 @@ void    PhoneBook::print_phonebook()
     int i;
 
     i = 0;
-        std::cout.width(30);
-        std::cout <<"===PHONEBOOK===" << std::endl;
+        std::cout.width(31);
+        std::cout <<"=== PHONEBOOK ===" << std::endl;
 	print_sum();
     while (i < total_idx)
     {
@@ -130,7 +142,8 @@ void    PhoneBook::print_index()
     int nbr;
 
     std::cout << "INDEX NEEDED:" << std::endl;
-    std::getline(std::cin, cmd);
+    while(cmd.compare("") == 0 && (!(std::cin.eof())))
+    	std::getline(std::cin, cmd);
     if (std::cin.eof())
         return ;
     if (cmd.find_first_not_of("0123456789") < 2147483647)

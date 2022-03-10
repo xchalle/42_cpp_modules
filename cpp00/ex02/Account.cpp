@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/10 15:18:57 by xchalle           #+#    #+#             */
+/*   Updated: 2022/03/10 17:25:08 by xchalle          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Account.hpp"
 #include <iostream>
 #include <ctime>
@@ -89,6 +101,7 @@ bool    Account::makeWithdrawal(int withdrawal)
         _nbWithdrawals++;
         std::cout << "nb_withdrawals:" << _nbWithdrawals << std::endl;
         _totalNbWithdrawals++;
+    	_totalAmount -= withdrawal;
         return (true);
     }
     std::cout << "withdrawals:refused" << std::endl;
