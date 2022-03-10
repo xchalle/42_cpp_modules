@@ -26,15 +26,27 @@ int     PhoneBook::set_contact()
 	return (idx);
 }
 
-void    PhoneBook::print_phonebook()
+void    PhoneBook::print_interline(int i)
 {
-    int i;
+	if (i == total_idx - 1)
+		std::cout << "\u2514";
+	else
+		std::cout << "\u251C";
+	for (int o = 0; o < 43; o++)
+		std::cout << "\u2500";
+	if (i == total_idx - 1)
+		std::cout << "\u2518";
+	else 
+		std::cout << "\u2524";
+        std::cout << std::endl;
+}
 
-    i = 0;
-        std::cout.width(30);
-        std::cout <<"===PHONEBOOK===" << std::endl;
-	for (int o = 0; o < 45; o++)
-		std::cout << "=";
+void    PhoneBook::print_sum()
+{
+	std::cout << "\u250C";
+	for (int o = 0; o < 43; o++)
+		std::cout << "\u2500";
+	std::cout << "\u2510";
 	std::cout << std::endl;
         std::cout << "|";
         std::cout.width(10);
@@ -46,9 +58,27 @@ void    PhoneBook::print_phonebook()
         std::cout.width(10);
         std::cout << "NICKNAME" << "|";
         std::cout << std::endl;
-	for (int o = 0; o < 45; o++)
-		std::cout << "=";
+	if (total_idx == 0)
+		std::cout << "\u2514";
+	else
+		std::cout << "\u251C";
+	for (int o = 0; o < 43; o++)
+		std::cout << "\u2500";
+	if (total_idx == 0)
+		std::cout << "\u2518";
+	else 
+		std::cout << "\u2524";
         std::cout << std::endl;
+}
+
+void    PhoneBook::print_phonebook()
+{
+    int i;
+
+    i = 0;
+        std::cout.width(30);
+        std::cout <<"===PHONEBOOK===" << std::endl;
+	print_sum();
     while (i < total_idx)
     {
         std::cout << "|";
@@ -63,9 +93,7 @@ void    PhoneBook::print_phonebook()
         std::cout.width(10);
         contact[i].print_tab(2);
         std::cout <<"|" << std::endl;
-	for (int o = 0; o < 45; o++)
-		std::cout << "-";
-        std::cout << std::endl;
+	print_interline(i);
         i++;
     }
     return ;

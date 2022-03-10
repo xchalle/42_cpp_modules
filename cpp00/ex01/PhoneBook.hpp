@@ -10,6 +10,8 @@ class PhoneBook
         int     set_contact();
         void    print_phonebook();
         void    print_index();
+        void    print_sum();
+        void    print_interline( int i );
 
     private :
 
