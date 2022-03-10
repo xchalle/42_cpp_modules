@@ -32,7 +32,7 @@ int Contact::set_contact()
     if (std::cin.eof())
         return (1);
     info[1] = cmd;
-        std::cout << "NICNAME:" <<std::endl;
+        std::cout << "NICKNAME:" <<std::endl;
     cmd = "";
     if (std::cin.eof())
         return (1);

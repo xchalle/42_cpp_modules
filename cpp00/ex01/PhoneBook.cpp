@@ -33,7 +33,17 @@ void    PhoneBook::print_interline(int i)
 	else
 		std::cout << "\u251C";
 	for (int o = 0; o < 43; o++)
-		std::cout << "\u2500";
+	{
+		if (o == 10 || o == 21 || o == 32)
+		{
+			if (i == total_idx - 1)
+				std::cout << "\u2534";
+			else
+				std::cout << "\u253C";
+		}
+		else
+			std::cout << "\u2500";
+	}
 	if (i == total_idx - 1)
 		std::cout << "\u2518";
 	else 
@@ -45,7 +55,12 @@ void    PhoneBook::print_sum()
 {
 	std::cout << "\u250C";
 	for (int o = 0; o < 43; o++)
-		std::cout << "\u2500";
+	{
+		if (o == 10 || o == 21 || o == 32)
+			std::cout << "\u252C";
+		else
+			std::cout << "\u2500";
+	}
 	std::cout << "\u2510";
 	std::cout << std::endl;
         std::cout << "|";
@@ -63,7 +78,17 @@ void    PhoneBook::print_sum()
 	else
 		std::cout << "\u251C";
 	for (int o = 0; o < 43; o++)
-		std::cout << "\u2500";
+	{
+		if (o == 10 || o == 21 || o == 32)
+		{
+			if (total_idx == 0)
+				std::cout << "\u2534";
+			else
+				std::cout << "\u253C";
+		}
+		else
+			std::cout << "\u2500";
+	}
 	if (total_idx == 0)
 		std::cout << "\u2518";
 	else 
