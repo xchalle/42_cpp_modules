@@ -5,6 +5,11 @@ Zombie::Zombie()
     return ;
 }
 
+Zombie::Zombie( std::string newname ) : name(newname)
+{
+    return ;
+}
+
 Zombie::~Zombie()
 {
     std::cout << name << " died" << std::endl;

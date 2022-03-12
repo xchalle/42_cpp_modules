@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/01 16:58:44 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/12 14:00:36 by xchalle          ###   ########.fr       */
+/*   Created: 2022/03/08 12:17:26 by xchalle           #+#    #+#             */
+/*   Updated: 2022/03/09 16:01:12 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		HUMANA_H
-# define	HUMANA_H
+#ifndef	_SCAVTRAP_H_
+# define _SCAVTRAP_H_
 
-#include "Weapon.hpp"
+#include "ClapTrap.hpp"
 
-class	HumanA
+class	ScavTrap : virtual public ClapTrap
 {
 	public:
-		HumanA(std::string name, Weapon &weapon);
-		~HumanA();
-		void	attack();
+		ScavTrap();
+		ScavTrap(const std::string name);
+		ScavTrap(const ScavTrap &rhs);
+		ScavTrap &operator=(const ScavTrap &rhs);
+		~ScavTrap();
+		
+		void	attack( const std::string& target);
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
+
+		void	guardGate( void );
 	private:
-		Weapon	*weapon;
-		std::string name;
+		static unsigned int	full_hp;
 };
 
 #endif

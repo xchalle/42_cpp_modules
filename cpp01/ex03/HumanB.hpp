@@ -6,12 +6,12 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 17:03:45 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/01 17:55:35 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/12 14:00:49 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		_HUMANB_H_
-# define	_HUMANB_H_
+#ifndef		HUMANB_H
+# define	HUMANB_H
 
 #include "Weapon.hpp"
 

@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.hpp                                          :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/02 15:50:07 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/12 14:12:28 by xchalle          ###   ########.fr       */
+/*   Created: 2022/03/08 10:43:34 by xchalle           #+#    #+#             */
+/*   Updated: 2022/03/08 13:13:36 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef KAREN_H
-# define KAREN_H
+#ifndef _CLAPTRAP_H_
+# define _CLAPTRAP_H_
 
 #include <iostream>
 #include <string>
 
-class	Karen
+class	ClapTrap
 {
 	public:
+		ClapTrap();
+		ClapTrap(const std::string name);
+		ClapTrap(const ClapTrap &rhs);
+		ClapTrap &operator=(const ClapTrap &rhs);
+		~ClapTrap();
 		
-		Karen();
-		~Karen();
-		void	complain( std::string level );
+		void	attack( const std::string& target);
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
+	protected:
+		std::string		name;
+		unsigned int		hp;
+		unsigned int		ep;
+		unsigned int		ad;
 	private:
-		void	debug( void );
-		void	info( void );
-		void	warning( void );
-		void	error( void );
+		static unsigned int	full_hp;
 };
 
 #endif
