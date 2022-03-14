@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 12:17:26 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/08 13:14:09 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/14 12:49:20 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class	ScavTrap : public ClapTrap
 		ScavTrap(const std::string name);
 		ScavTrap(const ScavTrap &rhs);
 		ScavTrap &operator=(const ScavTrap &rhs);
-		~ScavTrap();
+		virtual ~ScavTrap();
 		
 		void	attack( const std::string& target);
 		void	takeDamage(unsigned int amount);

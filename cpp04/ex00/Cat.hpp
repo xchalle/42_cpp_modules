@@ -6,16 +6,15 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 14:49:03 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/08 15:07:57 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/14 13:01:41 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#ifndef _CAT_H_
-#define _CAT_H_
+#ifndef CAT_H
+#define CAT_H
 
-#include <iostream>
-#include <string>
+#include "Animal.hpp"
 
 class Cat : public Animal
 {
@@ -23,8 +22,11 @@ class Cat : public Animal
 
 	Cat();
 	Cat(const Cat &rhs);
-	~Cat();
+	virtual ~Cat();
 	Cat &operator=(const Cat &rhs);
+
+	virtual void		makeSound() const;
+	virtual std::string	getType() const;
 	protected:
 	private:
 };

@@ -65,7 +65,6 @@ void	ScavTrap::takeDamage( unsigned int amount )
 {
 
 	std::cout << "ScavTrap "<< name << " took " << amount << " damage" << std::endl;
-	std::cout << hp << std::endl;
 	if (amount > hp)
 	{
 		hp = 0;

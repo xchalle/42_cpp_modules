@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/14 11:44:53 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/14 13:09:29 by xchalle          ###   ########.fr       */
+/*   Created: 2022/03/14 17:12:18 by xchalle           #+#    #+#             */
+/*   Updated: 2022/03/14 17:16:53 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef DOG_H
-#define DOG_H
-
-#include "Animal.hpp"
-
-class Dog : public Animal
+class AMateria
 {
 	public:
 
-	Dog();
-	Dog(const Dog &rhs);
-	Dog &operator=(const Dog &rhs);
-	virtual ~Dog();
-
-	virtual void		makeSound() const;
-	virtual std::string	getType() const;
+	AMateria(std::string const & type);
+	std::string const & getType() const;
+	virtual AMateria* clone() const = 0;
+	virtual void use(ICharacter& target);	
 	protected:
-	private:
-};
 
-#endif
+	std::string type;
+};
