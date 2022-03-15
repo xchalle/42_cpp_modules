@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 17:27:39 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/14 17:32:16 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/15 16:13:21 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 
 #include "AMateria.hpp"
 
-class Ice
+class ICharacter;
+
+class Ice : public AMateria
 {
 	public:
 
