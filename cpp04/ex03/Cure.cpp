@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 17:36:06 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/16 13:43:29 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/16 15:02:55 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include "Cure.hpp"
 #include "ICharacter.hpp"
 
-Cure::Cure(const std::string & type)
+Cure::Cure()
 {
 	std::cout << "Cure constructor called" << std::endl;
-	this->type = type;
+	this->type = "ice";
 	return ;
 }
 
@@ -42,7 +42,7 @@ Cure::~Cure()
 
 Cure*	Cure::clone() const
 {
-	return (new Cure(type));
+	return (new Cure());
 }
 
 void Cure::use( ICharacter& target )

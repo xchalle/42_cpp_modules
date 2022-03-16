@@ -6,16 +6,19 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 13:25:19 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/16 11:11:51 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/16 16:04:41 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
+#include <iostream> 
 
 MateriaSource::MateriaSource()
 {
 	std::cout << "MateriaSource constructor called" << std::endl;
 	nbr_stock = 0;
+	for (int i = 0; i < 4; i++)
+		stock[i] = NULL;
 }
 
 MateriaSource::~MateriaSource()
@@ -50,6 +53,7 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 {
 	for (int i = 0; i < 4; i++)
 	{
+		std::cout << "ok" << std::endl;
 		if (stock[i]->getType() == type)
 			return (stock[i]);
 	}

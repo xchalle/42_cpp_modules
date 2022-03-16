@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:09:54 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/16 13:36:08 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/16 15:01:12 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Cure : public AMateria
 {
 	public:
 
-	Cure(std::string const & type);
+	Cure();
 	Cure(const Cure &rhs);
 	virtual ~Cure();
 	Cure &operator=(const Cure &rhs);

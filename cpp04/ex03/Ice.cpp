@@ -6,23 +6,18 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 17:33:32 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/14 17:44:59 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/16 15:10:56 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Ice.hpp"
+#include "ICharacter.hpp"
 
 Ice::Ice()
 {
 	std::cout << "Ice default constructor called" << std::endl;
-	return ;
-}
-
-Ice::Ice(std::string const & type)
-{
-	std::cout << "Ice constructor called" << std::endl;
-	this.type = type;
+	this->type = "ice";
 	return ;
 }
 

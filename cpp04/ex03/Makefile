@@ -6,7 +6,7 @@
 #    By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/14 13:55:04 by xchalle           #+#    #+#              #
-#    Updated: 2022/03/15 14:03:03 by xchalle          ###   ########.fr        #
+#    Updated: 2022/03/16 15:11:23 by xchalle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRC =	main.cpp \
 	MateriaSource.cpp \
 	Character.cpp \
 	Cure.cpp \
-	Ice.cpp \ 
+	Ice.cpp  
 
 NAME = Amateria
 

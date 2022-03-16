@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 12:03:50 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/16 13:25:34 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/16 15:57:24 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 Character::Character(std::string name)
 {
 	this->name = name;
+	for (int  i = 0; i < 4; i++)
+		inventory[i] = NULL;
 	std::cout << name << " constructor called" << std::endl;
 }
 
@@ -50,10 +52,12 @@ void Character::equip(AMateria* m)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if ((inventory[i]->getType()).compare("ice") != 0 && (inventory[i]->getType()).compare("cure") != 0)
+	//	if ((inventory[i]->getType()).compare("ice") != 0 && (inventory[i]->getType()).compare("cure") != 0)
+		if (inventory[i] == NULL)
 		{
 			inventory[i] = m;
 			std::cout << m->getType() << " added to th inventory" << std::endl;
+			return ;
 		}
 	}
 	return ;
