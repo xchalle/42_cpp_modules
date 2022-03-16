@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 17:36:06 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/16 15:02:55 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/16 16:56:53 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 Cure::Cure()
 {
 	std::cout << "Cure constructor called" << std::endl;
-	this->type = "ice";
+	this->type = "cure";
 	return ;
 }
 

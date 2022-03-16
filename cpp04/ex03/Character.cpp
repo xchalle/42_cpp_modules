@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 12:03:50 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/16 15:57:24 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/16 17:10:04 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,11 @@ Character::~Character()
 {
 	std::cout << name << " destructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
-		delete inventory[i];
+	{
+		std::cout << i << std::endl;
+	//	if (inventory[i])
+			delete inventory[i];
+	}
 	return ;
 }
 
@@ -72,10 +76,14 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
-//	if (idx < 4 && idx > 0 && ((inventory[idx]->getType()).compare("ice") == 0 || (inventory[idx]->getType()).compare("ice") == 0))
-//	{
-//		inventory[idx]->use(target);
-//		delete inventory[idx];
-//	}
+	if (idx >= 4 && idx <= 0)
+	       return ;
+	if (!(inventory[idx]))
+	       return ;
+	if (((inventory[idx]->getType()).compare("cure") == 0 || (inventory[idx]->getType()).compare("ice") == 0))
+	{
+		inventory[idx]->use(target);
+		delete inventory[idx];
+	}
 	return ;
 }
