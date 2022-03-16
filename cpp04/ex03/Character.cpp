@@ -6,11 +6,12 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 12:03:50 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/16 12:46:57 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/16 13:25:34 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
+#include "AMateria.hpp"
 
 Character::Character(std::string name)
 {
@@ -60,17 +61,17 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx)
 {
-	if (idx < 4 && idx > 0 && ((inventory[idx]->getType()).compare("ice") == 0 || (inventory[idx]->getType()).compare("ice") == 0))
-		delete inventory[idx];
+//	if (idx < 4 && idx > 0 && ((inventory[idx]->getType()).compare("ice") == 0 || (inventory[idx]->getType()).compare("ice") == 0))
+//		delete inventory[idx];
 	return ;
 }
 
 void Character::use(int idx, ICharacter& target)
 {
-	if (idx < 4 && idx > 0 && ((inventory[idx]->getType()).compare("ice") == 0 || (inventory[idx]->getType()).compare("ice") == 0))
-	{
-		inventory[idx]->use(target);
-		delete inventory[idx];
-	}
+//	if (idx < 4 && idx > 0 && ((inventory[idx]->getType()).compare("ice") == 0 || (inventory[idx]->getType()).compare("ice") == 0))
+//	{
+//		inventory[idx]->use(target);
+//		delete inventory[idx];
+//	}
 	return ;
 }

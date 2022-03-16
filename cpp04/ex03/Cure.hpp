@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:09:54 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/16 12:04:17 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/16 13:36:08 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ class Cure : public AMateria
 {
 	public:
 
-	Cure();
+	Cure(std::string const & type);
 	Cure(const Cure &rhs);
-	~Cure();
+	virtual ~Cure();
 	Cure &operator=(const Cure &rhs);
 	Cure* clone() const;
 	void use(ICharacter& target);

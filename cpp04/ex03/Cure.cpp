@@ -6,23 +6,18 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 17:36:06 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/14 17:45:48 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/16 13:43:29 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Cure.hpp"
+#include "ICharacter.hpp"
 
-Cure::Cure()
-{
-	std::cout << "Cure default constructor called" << std::endl;
-	return ;
-}
-
-Cure::Cure(std::string const & type)
+Cure::Cure(const std::string & type)
 {
 	std::cout << "Cure constructor called" << std::endl;
-	this.type = type;
+	this->type = type;
 	return ;
 }
 
@@ -47,7 +42,7 @@ Cure::~Cure()
 
 Cure*	Cure::clone() const
 {
-	return (new Cure());
+	return (new Cure(type));
 }
 
 void Cure::use( ICharacter& target )

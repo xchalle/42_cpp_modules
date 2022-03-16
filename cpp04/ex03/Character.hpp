@@ -6,17 +6,17 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 11:12:43 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/16 12:31:17 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/16 13:13:03 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHARACTER_H
-# define AMATERIA_H
+# define CHARACTER_H
 
 
 #include "ICharacter.hpp"
 
-//class AMateria;
+class AMateria;
 
 class Character : public ICharacter
 {
