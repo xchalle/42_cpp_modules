@@ -6,12 +6,12 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:09:54 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/15 16:13:00 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/16 12:04:17 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _CURE_H_
-#define _CURE_H_
+#ifndef CURE_H
+#define CURE_H
 
 #include "AMateria.hpp"
 

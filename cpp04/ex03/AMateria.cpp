@@ -6,23 +6,17 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 17:43:04 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/14 17:43:14 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/16 10:49:14 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "AMateria.hpp"
 
-AMateria::AMateria()
-{
-	std::cout << "AMateria default constructor called" << std::endl;
-	return ;
-}
-
 AMateria::AMateria( std::string const & type)
 {
 	std::cout << "AMateria constructor called" << std::endl;
-	this.type = type;
+	this->type = type;
 	return ;
 }
 
