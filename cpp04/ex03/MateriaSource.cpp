@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 13:25:19 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/16 17:06:28 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/17 12:10:56 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,7 @@ MateriaSource::MateriaSource()
 MateriaSource::~MateriaSource()
 {
 	for (int i = 0; i < 4; i++)
-	{
-		std::cout << "test" << std::endl;
 		delete stock[i];
-	}
 	std::cout << "MateriaSource destructor called" << std::endl;
 }
 
@@ -40,6 +37,12 @@ MateriaSource::MateriaSource(const MateriaSource &rhs)
 MateriaSource &MateriaSource::operator=(const MateriaSource &rhs)
 {
 	std::cout << "MateriaSource copy assignement operator called" << std::endl;
+	for (int i = 0; i < rhs.nbr_stock; i++)
+	{
+		if (rhs.stock[i])
+			stock[i] = rhs.stock[i]->clone();
+	}
+	nbr_stock = rhs.nbr_stock; 
 	return *this;
 }
 
@@ -56,9 +59,10 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		std::cout << (stock[i]->getType()) << std::endl;
 		if ((stock[i]->getType()).compare(type) == 0)
-			return (stock[i]);
+		{
+			return stock[i]->clone();
+		}
 	}
 	return (0);
 }

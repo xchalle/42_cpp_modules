@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 12:03:50 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/16 17:10:04 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/17 12:12:17 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ Character	&Character::operator=( const Character &rhs)
 {
 	std::cout << "Character copy assignement operator called" << std::endl;
 	name = rhs.name;
+	for (int i = 0; i < 4; i++)
+	{
+		if (rhs.inventory[i])
+			inventory[i] = rhs.inventory[i]->clone();
+	}
 	return  *this;
 }
 
@@ -40,7 +45,6 @@ Character::~Character()
 	std::cout << name << " destructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
-		std::cout << i << std::endl;
 	//	if (inventory[i])
 			delete inventory[i];
 	}
@@ -60,7 +64,7 @@ void Character::equip(AMateria* m)
 		if (inventory[i] == NULL)
 		{
 			inventory[i] = m;
-			std::cout << m->getType() << " added to th inventory" << std::endl;
+			std::cout << m->getType() << " added to the inventory" << std::endl;
 			return ;
 		}
 	}
@@ -84,6 +88,7 @@ void Character::use(int idx, ICharacter& target)
 	{
 		inventory[idx]->use(target);
 		delete inventory[idx];
+		inventory[idx] = NULL;
 	}
 	return ;
 }

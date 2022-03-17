@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 17:33:32 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/16 15:10:56 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/17 12:11:26 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 Ice::Ice()
 {
-	std::cout << "Ice default constructor called" << std::endl;
+	std::cout << "Ice constructor called" << std::endl;
 	this->type = "ice";
 	return ;
 }
@@ -31,6 +31,7 @@ Ice::Ice(const Ice &rhs)
 Ice	&Ice::operator=( const Ice &rhs)
 {
 	std::cout << "Ice copy assignement operator called" << std::endl;
+	this->type = rhs.type;
 	return  *this;
 }
 
@@ -42,7 +43,7 @@ Ice::~Ice()
 
 Ice*	Ice::clone() const
 {
-	return (new Ice());
+	return (new Ice(*this));
 }
 
 void Ice::use( ICharacter& target )
