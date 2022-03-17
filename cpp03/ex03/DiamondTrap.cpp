@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 13:39:42 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/09 16:20:07 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/17 14:47:29 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,22 +55,22 @@ DiamondTrap::~DiamondTrap()
 	return ;
 }
 
-void	DiamondTrap::attack( const std::string &target )
-{
-	if (hp == 0)
-	{
-		std::cout << "DiamondTrap "<< name << " can't attacks " << target << ", Hit point = " << hp << std::endl;
-		return ;
-	}
-	if (ep == 0)
-	{
-		std::cout << "DiamondTrap "<< name << " can't attacks " << target << ", Energie point = " << ep << std::endl;
-		return ;
-	}
-	std::cout << "DiamondTrap "<< name << " attacks " << target << ", causing " << ad << " points of damage!" << std::endl;
-	ep -= 1;
-	return ;
-}
+//void	DiamondTrap::attack( const std::string &target )
+//{
+//	if (hp == 0)
+//	{
+//		std::cout << "DiamondTrap "<< name << " can't attacks " << target << ", Hit point = " << hp << std::endl;
+//		return ;
+//	}
+//	if (ep == 0)
+//	{
+//		std::cout << "DiamondTrap "<< name << " can't attacks " << target << ", Energie point = " << ep << std::endl;
+//		return ;
+//	}
+//	std::cout << "DiamondTrap "<< name << " attacks " << target << ", causing " << ad << " points of damage!" << std::endl;
+//	ep -= 1;
+//	return ;
+//}
 
 void	DiamondTrap::takeDamage( unsigned int amount )
 {
@@ -113,9 +113,9 @@ void	DiamondTrap::beRepaired( unsigned int amount )
 	return ;
 }
 
-void	DiamondTrap::highFivesGuys()
+void	DiamondTrap::whoAmI()
 {
-	std::cout << "Gimme a high five !" << std::endl;
+	std::cout << "I am " << name << "inherit from " << ClapTrap::name <<std::endl;
 	return ;
 }
 

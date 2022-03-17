@@ -22,7 +22,7 @@ int	main(int ac, char **av)
 	s1 = av[2];
 	s2 = av[3];
 	old1.open(av[1], std::ifstream::in);
-	if (!_old)
+	if (!old1)
 	{
 		std::cout  << "Error opening " << av[1] << std::endl;
 		return (0);
@@ -40,7 +40,6 @@ int	main(int ac, char **av)
 		found = content.length();
 		while ((found = content.rfind(s1, found)) != content.npos)
 		{
-			std::cout << found << std::endl;
 			content.erase(found, s1.length());
 			content.insert(found, s2);
 			if (found == 0)

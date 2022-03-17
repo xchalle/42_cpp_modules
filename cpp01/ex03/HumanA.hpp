@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:58:44 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/12 14:00:36 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/17 15:14:10 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class	HumanA
 		~HumanA();
 		void	attack();
 	private:
-		Weapon	*weapon;
-		std::string name;
+		Weapon&		weapon;
+		std::string	name;
 };
 
 #endif

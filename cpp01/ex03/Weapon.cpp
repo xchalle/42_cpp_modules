@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 17:56:37 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/12 13:57:03 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/17 15:00:27 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,12 @@ Weapon::Weapon(std::string type)
 
 Weapon::~Weapon()
 {
-	this->type = type;
        return ;
 }
 
 const std::string&	Weapon::getType()
 {
-	std::string	&tmp=type;
-	return(tmp);
+	return(type);
 }
 	
 void		Weapon::setType(std::string name)

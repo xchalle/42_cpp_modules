@@ -6,18 +6,19 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 11:25:39 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/08 13:44:38 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/17 14:37:57 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
-	FragTrap a("Rob");
-	FragTrap c(a);
-	FragTrap b("Wally");
+	DiamondTrap a("Rob");
+	DiamondTrap c(a);
+	DiamondTrap b("Wally");
 
 	a.attack("Wally");
 	a.attack("Wally");
