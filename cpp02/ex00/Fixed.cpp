@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:04:58 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/03 13:20:11 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/17 18:28:40 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ Fixed::Fixed( const Fixed &fixed)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = fixed;
-	//fp_number = fixed.fp_number;
-	//nb_fra = fixed.nb_fra;
 	return ;
 }
 
@@ -54,3 +52,5 @@ int	Fixed::getRawBits( void ) const
 	std::cout << "getRawBits member function called" << std::endl;
 	return (fp_number);
 }
+
+const int	Fixed::nb_fra = 8;

@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:04:58 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/07 13:43:08 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/17 18:31:00 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,3 +80,5 @@ float	Fixed::toFloat() const
 {
 	return ((float)fp_number/256);
 }
+
+const int	Fixed::nb_fra = 8;

@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 12:47:58 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/03 13:06:22 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/17 18:29:21 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class	Fixed
 		void	setRawBits( int const raw);
 	private:
 		int	fp_number;
-		static const int	nb_fra = 8;
+		static const int	nb_fra;
 };
 
 #endif
