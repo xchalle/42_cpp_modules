@@ -6,12 +6,12 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 12:47:58 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/07 15:07:45 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/18 11:56:33 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		_FIXED_H_
-# define	_FIXED_H_
+#ifndef		FIXED_H
+# define	FIXED_H
 
 #include <string>
 #include <iostream>

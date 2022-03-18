@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:04:58 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/17 18:31:00 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/18 12:02:17 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,19 @@ Fixed::Fixed()
 	return ;
 }
 
-Fixed::Fixed(const int val) : fp_number(val << 8)
+Fixed::Fixed(const int val) : fp_number(val << nb_fra)
 {
 	std::cout << "Int constructor called" << std::endl;
 	return ;
 }
 
-Fixed::Fixed(const float fval) : fp_number(roundf(fval * 256))
+Fixed::Fixed(const float fval)
 {
 	std::cout << "Float constructor called" << std::endl;
+	int tmp = 1;
+	for (int i = 0; i < nb_fra; i++)
+		tmp *= 2;
+	fp_number = roundf(fval * tmp);
 	return ;
 }
 
@@ -73,12 +77,18 @@ int	Fixed::getRawBits( void ) const
 
 int	Fixed::toInt() const
 {
-	return (fp_number/256);
+	int tmp = 1;
+	for (int i = 0; i < nb_fra; i++)
+		tmp *= 2;
+	return (fp_number/tmp);
 }
 
 float	Fixed::toFloat() const
 {
-	return ((float)fp_number/256);
+	int tmp = 1;
+	for (int i = 0; i < nb_fra; i++)
+		tmp *= 2;
+	return ((float)fp_number/tmp);
 }
 
 const int	Fixed::nb_fra = 8;

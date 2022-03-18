@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:04:58 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/07 16:20:23 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/18 12:00:07 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,18 @@ int	Fixed::getRawBits( void ) const
 
 int	Fixed::toInt() const
 {
-	return (fp_number/256);
+	int tmp = 1;
+	for (int i = 0; i < nb_fra; i++)
+		tmp *= 2;
+	return (fp_number/tmp);
 }
 
 float	Fixed::toFloat() const
 {
-	return ((float)fp_number/256);
+	int tmp = 1;
+	for (int i = 0; i < nb_fra; i++)
+		tmp *= 2;
+	return ((float)fp_number/tmp);
 }
 
 bool Fixed::operator ==(const Fixed &b) const
