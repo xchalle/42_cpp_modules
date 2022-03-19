@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 14:54:59 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/18 15:33:42 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/19 21:47:57 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,11 @@ void	Bureaucrat::decrGrade()
 		throw Bureaucrat::GradeTooLowException();
 	else
 		grade++;
+}
+
+void	signForm()
+{
+	
 }
 
 std::ostream&	operator<<(std::ostream& stream, const Bureaucrat &bureaucrat)

@@ -36,6 +36,7 @@ class Bureaucrat
 	unsigned int	getGrade() const;
 	void		incrGrade();
 	void		decrGrade();
+	void		signForm();
 
 	protected:
 	private:
