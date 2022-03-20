@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:05:06 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/18 12:31:31 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/20 13:21:35 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,10 @@ int main( void )
 	Fixed const c( Fixed( 16.06f ) / Fixed( 4.6f ) );
 	Fixed d;
 	Fixed e;
+	Fixed te;
 
+	te.setRawBits(50);
+	std::cout << "te = " << te << std::endl;
 	d = b + c;	
 	e = (Fixed(10.5898f) + Fixed(9));
 	std::cout << "c = " << c << std::endl;

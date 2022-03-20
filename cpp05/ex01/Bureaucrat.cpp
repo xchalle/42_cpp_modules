@@ -6,14 +6,14 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 14:54:59 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/19 21:47:57 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/20 17:41:54 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat() : name("Christian"), grade(150)
 {
 	std::cout << "Bureaucrat default constructor called" << std::endl;
 	return ;
@@ -31,7 +31,7 @@ Bureaucrat::Bureaucrat( std::string name, unsigned int new_grade) : name(name)
 	return ;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &rhs)
+Bureaucrat::Bureaucrat(const Bureaucrat &rhs) : name(rhs.name)
 {
 	std::cout << "Bureaucrat copy constructor called" << std::endl;
 	*this = rhs;
@@ -41,7 +41,6 @@ Bureaucrat::Bureaucrat(const Bureaucrat &rhs)
 Bureaucrat	&Bureaucrat::operator=( const Bureaucrat &rhs)
 {
 	std::cout << "Bureaucrat copy assignement operator called" << std::endl;
-	name = rhs.name;
 	grade = rhs.grade;
 	return  *this;
 }

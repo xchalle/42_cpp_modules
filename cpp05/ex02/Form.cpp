@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:22:32 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/20 17:04:59 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/19 21:53:07 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,6 @@
 Form::Form()
 {
 	std::cout << "Form default constructor called" << std::endl;
-	name = "default form";
-	this->s_grade = 1;
-	this->e_grade = 1;
-	this->_signed = false;
 	return ;
 }
 
