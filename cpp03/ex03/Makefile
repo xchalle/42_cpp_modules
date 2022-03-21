@@ -6,16 +6,17 @@
 #    By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/14 13:55:04 by xchalle           #+#    #+#              #
-#    Updated: 2022/03/08 13:24:45 by xchalle          ###   ########.fr        #
+#    Updated: 2022/03/21 13:20:27 by xchalle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC =	main.cpp \
 	ClapTrap.cpp \
 	FragTrap.cpp \
+	DiamondTrap.cpp \
 	ScavTrap.cpp
 
-NAME = FragTrap
+NAME = DiamondTrap
 
 XXFLAGS = -Wall -Werror -Wextra -std=c++98
 

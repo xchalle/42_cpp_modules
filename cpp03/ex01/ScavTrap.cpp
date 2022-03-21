@@ -61,46 +61,46 @@ void	ScavTrap::attack( const std::string &target )
 	return ;
 }
 
-void	ScavTrap::takeDamage( unsigned int amount )
-{
-
-	std::cout << "ScavTrap "<< name << " took " << amount << " damage" << std::endl;
-	if (amount > hp)
-	{
-		hp = 0;
-		std::cout << "ScavTrap "<< name << " Hit point = " << hp << std::endl;
-		return ;
-	}
-	hp -= amount;
-	std::cout << "ScavTrap "<< name << " Hit point = " << hp << std::endl;
-	return ;
-}
-
-void	ScavTrap::beRepaired( unsigned int amount )
-{
-	if (hp == 0 || hp == full_hp)
-	{
-		std::cout << "ScavTrap "<< name << " can't repaire himself, Hit point = " << hp << std::endl;
-		return ;
-	}
-	if (ep == 0)
-	{
-		std::cout << "ScavTrap "<< name << " can't repaire himself, Energie point = " << ep << std::endl;
-		return ;
-	}
-	if (amount + hp > full_hp)
-	{
-		std::cout << "ScavTrap "<< name << " repaired himself " << (full_hp - hp) << " Hit point!" << std::endl;
-		std::cout << "ScavTrap "<< name << " is full HP!" << std::endl;
-		hp = full_hp;
-		ep -= 1;
-		return ;
-	}
-	std::cout << "ScavTrap "<< name << " repaired himself " << amount << " Hit point!" << std::endl;
-	hp += amount;
-	ep -= 1;
-	return ;
-}
+//void	ScavTrap::takeDamage( unsigned int amount )
+//{
+//
+//	std::cout << "ScavTrap "<< name << " took " << amount << " damage" << std::endl;
+//	if (amount > hp)
+//	{
+//		hp = 0;
+//		std::cout << "ScavTrap "<< name << " Hit point = " << hp << std::endl;
+//		return ;
+//	}
+//	hp -= amount;
+//	std::cout << "ScavTrap "<< name << " Hit point = " << hp << std::endl;
+//	return ;
+//}
+//
+//void	ScavTrap::beRepaired( unsigned int amount )
+//{
+//	if (hp == 0 || hp == full_hp)
+//	{
+//		std::cout << "ScavTrap "<< name << " can't repaire himself, Hit point = " << hp << std::endl;
+//		return ;
+//	}
+//	if (ep == 0)
+//	{
+//		std::cout << "ScavTrap "<< name << " can't repaire himself, Energie point = " << ep << std::endl;
+//		return ;
+//	}
+//	if (amount + hp > full_hp)
+//	{
+//		std::cout << "ScavTrap "<< name << " repaired himself " << (full_hp - hp) << " Hit point!" << std::endl;
+//		std::cout << "ScavTrap "<< name << " is full HP!" << std::endl;
+//		hp = full_hp;
+//		ep -= 1;
+//		return ;
+//	}
+//	std::cout << "ScavTrap "<< name << " repaired himself " << amount << " Hit point!" << std::endl;
+//	hp += amount;
+//	ep -= 1;
+//	return ;
+//}
 
 void	ScavTrap::guardGate()
 {

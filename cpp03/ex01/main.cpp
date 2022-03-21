@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 11:25:39 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/14 12:45:17 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/21 12:37:16 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main()
 	test->takeDamage(4);
 	test->beRepaired(2147483647);
 	test->takeDamage(11);
-	test->beRepaired(2147483647);
+	test->beRepaired(2147483648);
 	a.attack("Wally");
 	a.attack("Wally");
 	a.attack("Wally");
@@ -50,5 +50,6 @@ int main()
 	c.beRepaired(2147483647);
 	c.takeDamage(11);
 	c.beRepaired(2147483647);
+	c.guardGate();
 	delete test;
 }

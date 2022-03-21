@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:41:17 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/14 15:43:05 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/21 17:14:57 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,20 @@ Cat::Cat(const Cat &rhs)
 
 Cat	&Cat::operator=( const Cat &rhs)
 {
+	std::string *tmp;
 	std::cout << "Cat copy assignement operator called" << std::endl;
 	type = rhs.type;
+	brain = new Brain();
+	tmp = rhs.getIdeas();
+	for (int i = 0; i < 100; i++)
+		brain->setIdeas(i, tmp[i]);
 	return  *this;
 }
 
 Cat::~Cat()
 {
-	std::cout << "Cat destructor called" << std::endl;
 	delete brain;
+	std::cout << "Cat destructor called" << std::endl;
 	return ;
 }
 

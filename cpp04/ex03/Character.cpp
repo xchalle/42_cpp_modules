@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 12:03:50 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/17 13:33:29 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/21 18:08:11 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,11 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx)
 {
-//	if (idx < 4 && idx > 0 && ((inventory[idx]->getType()).compare("ice") == 0 || (inventory[idx]->getType()).compare("ice") == 0))
-//		delete inventory[idx];
+	if (idx < 4 && idx > 0 && ((inventory[idx]/*->getType()).compare("ice") == 0*/) || (inventory[idx]/*->getType()).compare("ice") == 0*/)))
+	{
+		delete inventory[idx];
+		inventory[idx] = NULL;
+	}	
 	return ;
 }
 

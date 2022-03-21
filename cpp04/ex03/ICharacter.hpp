@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 11:04:33 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/16 12:24:12 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/21 17:32:51 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class ICharacter
 		virtual	std::string const & getName() const = 0;
 		virtual	void equip(AMateria* m) = 0;
 		virtual	void unequip(int idx) = 0;
-		virtual	void use(int idxm, ICharacter& target) = 0;
+		virtual	void use(int idx, ICharacter& target) = 0;
 };
 
 #endif

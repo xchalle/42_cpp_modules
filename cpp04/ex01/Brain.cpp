@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 13:56:45 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/14 14:33:06 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/21 16:53:19 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ Brain::Brain(const Brain &rhs)
 Brain	&Brain::operator=( const Brain &rhs)
 {
 	std::cout << "Brain copy assignement operator called" << std::endl;
+	for (int i = 0; i < 100; i++)
+		ideas[i] = rhs.ideas[i];
 	return  *this;
 }
 

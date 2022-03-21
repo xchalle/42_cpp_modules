@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 13:39:42 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/17 14:47:29 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/21 13:58:05 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ DiamondTrap::DiamondTrap()
 {
 	std::cout << "Diamond default constructor called" << std::endl;
 	name = "DiamondTrap";
+	ClapTrap::name += "_clap_name";
 	hp = 100;
 	ep = 50;
 	ad = 30;
@@ -26,6 +27,18 @@ DiamondTrap::DiamondTrap(const std::string newname)
 {
 	std::cout << "Diamond newname constructor called" << std::endl;
 	name = newname;
+	ClapTrap::name += "_clap_name";
+	hp = 100;
+	ep = 50;
+	ad = 30;
+	return ;
+}
+
+DiamondTrap::DiamondTrap(const std::string newname, const std::string clapname) : ScavTrap(clapname)
+{
+	std::cout << "Diamond newname constructor called" << std::endl;
+	name = newname;
+	ClapTrap::name += "_clap_name";
 	hp = 100;
 	ep = 50;
 	ad = 30;
@@ -43,6 +56,7 @@ DiamondTrap	&DiamondTrap::operator=( const DiamondTrap &rhs)
 {
 	std::cout << "Diamond copy assignement operator called" << std::endl;
 	name = rhs.name;
+	ClapTrap::name = rhs.ClapTrap::name;
 	hp = rhs.hp;
 	ep = rhs.ep;
 	ad = rhs.ad;
@@ -55,22 +69,22 @@ DiamondTrap::~DiamondTrap()
 	return ;
 }
 
-//void	DiamondTrap::attack( const std::string &target )
-//{
-//	if (hp == 0)
-//	{
-//		std::cout << "DiamondTrap "<< name << " can't attacks " << target << ", Hit point = " << hp << std::endl;
-//		return ;
-//	}
-//	if (ep == 0)
-//	{
-//		std::cout << "DiamondTrap "<< name << " can't attacks " << target << ", Energie point = " << ep << std::endl;
-//		return ;
-//	}
-//	std::cout << "DiamondTrap "<< name << " attacks " << target << ", causing " << ad << " points of damage!" << std::endl;
-//	ep -= 1;
-//	return ;
-//}
+void	DiamondTrap::attack( const std::string &target )
+{
+	if (hp == 0)
+	{
+		std::cout << "DiamondTrap "<< name << " can't attacks " << target << ", Hit point = " << hp << std::endl;
+		return ;
+	}
+	if (ep == 0)
+	{
+		std::cout << "DiamondTrap "<< name << " can't attacks " << target << ", Energie point = " << ep << std::endl;
+		return ;
+	}
+	std::cout << "DiamondTrap "<< name << " attacks " << target << ", causing " << ad << " points of damage!" << std::endl;
+	ep -= 1;
+	return ;
+}
 
 void	DiamondTrap::takeDamage( unsigned int amount )
 {
@@ -115,7 +129,7 @@ void	DiamondTrap::beRepaired( unsigned int amount )
 
 void	DiamondTrap::whoAmI()
 {
-	std::cout << "I am " << name << "inherit from " << ClapTrap::name <<std::endl;
+	std::cout << "I am " << name << " inherit from " << ClapTrap::name <<std::endl;
 	return ;
 }
 

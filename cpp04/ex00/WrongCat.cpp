@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 13:22:32 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/14 13:22:36 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/21 14:36:57 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ WrongCat::~WrongCat()
 
 void	WrongCat::makeSound() const
 {
-	std::cout << "MEOW MEOW i am a cat..." << std::endl;
+	std::cout << "MEOW MEOW i am a wrongcat..." << std::endl;
 	return ;
 }
 

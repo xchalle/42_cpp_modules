@@ -6,12 +6,12 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 10:43:34 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/08 13:13:36 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/21 12:52:38 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _CLAPTRAP_H_
-# define _CLAPTRAP_H_
+#ifndef CLAPTRAP_H
+# define CLAPTRAP_H
 
 #include <iostream>
 #include <string>
@@ -23,11 +23,11 @@ class	ClapTrap
 		ClapTrap(const std::string name);
 		ClapTrap(const ClapTrap &rhs);
 		ClapTrap &operator=(const ClapTrap &rhs);
-		~ClapTrap();
+		virtual ~ClapTrap();
 		
-		void	attack( const std::string& target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
+		virtual void	attack( const std::string& target);
+		virtual void	takeDamage(unsigned int amount);
+		virtual void	beRepaired(unsigned int amount);
 	protected:
 		std::string		name;
 		unsigned int		hp;

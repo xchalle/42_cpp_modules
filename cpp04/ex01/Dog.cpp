@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:42:14 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/14 15:43:31 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/21 17:14:48 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,20 @@ Dog::Dog(const Dog &rhs)
 
 Dog	&Dog::operator=( const Dog &rhs)
 {
+	std::string *tmp;
 	std::cout << "Dog copy assignement operator called" << std::endl;
 	type = rhs.type;
+	brain = new Brain();
+	tmp = rhs.getIdeas();
+	for (int i = 0; i < 100; i++)
+		brain->setIdeas(i, tmp[i]);
 	return  *this;
 }
 
 Dog::~Dog()
 {
-	std::cout << "Dog destructor called" << std::endl;
 	delete brain;
+	std::cout << "Dog destructor called" << std::endl;
 	return ;
 }
 
