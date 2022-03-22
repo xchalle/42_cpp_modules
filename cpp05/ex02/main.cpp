@@ -6,10 +6,14 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 13:24:46 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/18 15:26:46 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/22 17:40:36 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "PresidentialPardonForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "Aform.hpp"
 #include "Bureaucrat.hpp"
 
 int	main()

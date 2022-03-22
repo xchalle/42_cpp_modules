@@ -6,12 +6,13 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 14:54:59 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/20 17:41:54 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/22 16:26:41 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Bureaucrat.hpp"
+#include <stdexcept>
 
 Bureaucrat::Bureaucrat() : name("Christian"), grade(150)
 {
@@ -78,9 +79,12 @@ void	Bureaucrat::decrGrade()
 		grade++;
 }
 
-void	signForm()
+void	Bureaucrat::signForm(Form &form)
 {
-	
+	if (form.isSigned())
+		throw std::invalid_argument(name + " couldn't sign " + form.getName() + " because form signed yet");
+	form.beSigned(*this);
+	std::cout << name << " signed " << form.getName() << std::endl;
 }
 
 std::ostream&	operator<<(std::ostream& stream, const Bureaucrat &bureaucrat)

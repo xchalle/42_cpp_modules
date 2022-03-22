@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:14:55 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/19 21:40:42 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/22 14:43:06 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 #ifndef FORM_H
 #define FORM_H
 
+#include "Bureaucrat.hpp"
 #include <iostream>
 #include <string>
+
+class Bureaucrat;
 
 class Form
 {
@@ -48,7 +51,7 @@ class Form
 	unsigned int	getGrade_s() const;
 	unsigned int	getGrade_e() const;
 	bool	isSigned() const;
-	void	beSigned(Bureaucrat &bureaucrat);
+	void	beSigned(Bureaucrat& bureaucrat);
 
 	protected:
 	private:

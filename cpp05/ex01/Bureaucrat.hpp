@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 18:36:55 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/20 19:46:19 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/22 14:43:27 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #ifndef BUREAUCRAT_H
 #define BUREAUCRAT_H
 
+
+#include "Form.hpp" 
 #include <iostream>
 #include <string>
 
@@ -50,7 +52,7 @@ class Bureaucrat
 	unsigned int	getGrade() const;
 	void		incrGrade();
 	void		decrGrade();
-	void		signForm();
+	void		signForm(Form &form);
 
 	protected:
 	private:

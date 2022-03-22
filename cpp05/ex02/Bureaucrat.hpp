@@ -1,9 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/20 18:36:55 by xchalle           #+#    #+#             */
+/*   Updated: 2022/03/22 18:19:44 by xchalle          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #ifndef BUREAUCRAT_H
 #define BUREAUCRAT_H
 
+
+#include "AForm.hpp" 
 #include <iostream>
 #include <string>
+
+class AForm;
 
 class Bureaucrat
 {
@@ -36,7 +52,8 @@ class Bureaucrat
 	unsigned int	getGrade() const;
 	void		incrGrade();
 	void		decrGrade();
-	void		signForm();
+	void		signForm(AForm &form);
+	void		executeForm(AForm const &form);
 
 	protected:
 	private:

@@ -6,12 +6,11 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 13:24:46 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/20 17:42:42 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/22 16:26:02 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
 
 int	main()
 {
@@ -28,7 +27,12 @@ int	main()
 		std::cout << alain <<std::endl;
 		std::cout << alain2 <<std::endl;
 		Bureaucrat john("John", 1);
-	//	john.incrGrade();
+		std::cout << testform << std::endl;
+		john.signForm(form);
+		std::cout << form << std::endl;
+		alain.signForm(form);
+		alain.signForm(testform);
+//	john.incrGrade();
 	//	std::cout << john <<std::endl;
 	}
 	catch (const std::exception& e)
