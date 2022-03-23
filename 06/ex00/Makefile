@@ -6,14 +6,14 @@
 #    By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/14 13:55:04 by xchalle           #+#    #+#              #
-#    Updated: 2022/03/03 13:07:07 by xchalle          ###   ########.fr        #
+#    Updated: 2022/03/23 10:32:05 by xchalle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC =	main.cpp \
-	Fixed.cpp
+	Convert.cpp
 
-NAME = fixed
+NAME = scalaireConvert
 
 XXFLAGS = -Wall -Werror -Wextra -std=c++98
 

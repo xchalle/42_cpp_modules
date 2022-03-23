@@ -3,31 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 13:24:46 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/18 15:26:46 by xchalle          ###   ########.fr       */
+/*   Created: 2022/03/23 09:46:51 by xchalle           #+#    #+#             */
+/*   Updated: 2022/03/23 11:54:51 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "Convert.hpp"
 
-int	main()
+int	main(int ac, char **argv)
 {
-	try
+	std::string str;
+	float i= 422222222222222222222.22222222222222222222;
+	std::cout << i << std::endl;
+	if (ac != 2)
 	{
-		Bureaucrat alain("Alain", 140);
-		Bureaucrat alain2 = alain;
-		alain.decrGrade();
-		std::cout << alain <<std::endl;
-		std::cout << alain2 <<std::endl;
-		Bureaucrat john("John", 1);
-		john.incrGrade();
-		std::cout << john <<std::endl;
+		std::cout << "Please enter only one arguement" << std::endl;
+		return (-1);
 	}
-	catch (const std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	return (0);
+	str = argv[1];
+	Convert conv(str);
+	conv.scalaireConvert();
+	return (1);
 }
