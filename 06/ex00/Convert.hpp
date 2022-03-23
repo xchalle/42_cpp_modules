@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 09:48:30 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/23 12:07:07 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/23 17:41:40 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ class Convert
 	void	isInt();
 	void	isDouble();
 	void	isFloat();
+	void	print_out_of_range();
+	void	print_nan();
+	void	print_ninf();
+	void	print_inf();
 	private:
 	std::string	_string;
 };

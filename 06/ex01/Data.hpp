@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
+/*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 09:46:51 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/23 16:05:33 by xchalle          ###   ########.fr       */
+/*   Created: 2022/03/23 16:38:21 by xchalle           #+#    #+#             */
+/*   Updated: 2022/03/23 16:44:18 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.hpp"
-
-int	main(int ac, char **argv)
+class Data
 {
-	std::string str;
-	if (ac != 2)
-	{
-		std::cout << "Please enter only one arguement" << std::endl;
-		return (-1);
-	}
-	str = argv[1];
-	Convert conv(str);
-	conv.scalaireConvert();
-	return (1);
-}
+	public:
+		Data() : a(10), b(20) , c(42.5) {}
+		int	a;
+		float	c;
+		double	b;
+};

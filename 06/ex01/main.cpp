@@ -3,25 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
+/*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 09:46:51 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/23 16:05:33 by xchalle          ###   ########.fr       */
+/*   Created: 2022/03/23 16:35:29 by xchalle           #+#    #+#             */
+/*   Updated: 2022/03/23 17:49:11 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.hpp"
+#include "Data.hpp"
+#include <iostream> 
 
-int	main(int ac, char **argv)
+uintptr_t serialize(Data* ptr)
 {
-	std::string str;
-	if (ac != 2)
-	{
-		std::cout << "Please enter only one arguement" << std::endl;
-		return (-1);
-	}
-	str = argv[1];
-	Convert conv(str);
-	conv.scalaireConvert();
-	return (1);
+	return (reinterpret_cast<uintptr_t>(ptr));
+}
+
+Data* deserialize(uintptr_t raw)
+{
+	return (reinterpret_cast<Data*>(raw));
+}
+
+int main()
+{
+	Data	*test = new Data();
+	test = deserialize(serialize(test));
+	std::cout << test->a << std::endl;
+	std::cout << test->b << std::endl;
+	std::cout << test->c << std::endl;
+
+	delete test;
+	return (0);
 }
