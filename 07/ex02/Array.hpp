@@ -14,45 +14,35 @@ class Array
 
 	public:
 
-	Array() {_size = 0;};
+	Array() : _size(0) {array = new T[0]();};
 	Array(unsigned int n) { array = new T[n]();
 _size = n;};
 	Array(const Array &rhs)
 	{
 		*this = rhs;
 	};
-	~Array();
+	~Array()
+	{
+		delete [] array;
+	};
 	Array &operator=(const Array &rhs)
 	{
-		//int o = 0;
-		//while (rhs.array[o])
-		//	o++;
-		this->array = new T[rhs.size()]();
-		for (int i = 0; i < rhs.size(); i++)
+		_size = rhs._size;
+		this->array = new T[this->_size]();
+		for (int i = 0; i < this->_size; i++)
 			this->array[i] = rhs.array[i];
-		_size = rhs.size();
 		return (*this);
 	};
 	unsigned int size()
 	{
-	//	int i = 0;
-	//	while (array[i])
-	//		i++;
 		return (_size);
 	};
 	T& operator[](std::size_t idx)
 	{
-		try
-		{
-			if (idx >= size())
-				throw std::invalid_argument("index too high for this array");
+			if (idx >= size() || idx < 0)
+				throw std::invalid_argument("index invalid for this array");
 			else
 				return array[idx];
-		}
-		catch (const std::invalid_argument& ia)
-		{
-			std::cout << "Error: " << ia.what() << std::endl;
-		}
 		return (*array);
 	}
 };
