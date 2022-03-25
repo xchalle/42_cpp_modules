@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 12:03:50 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/21 18:08:11 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/25 13:57:27 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,19 @@ Character::Character(std::string name)
 	this->name = name;
 	for (int  i = 0; i < 4; i++)
 		inventory[i] = NULL;
-	std::cout << name << " constructor called" << std::endl;
+//	std::cout << name << " constructor called" << std::endl;
 }
 
 Character::Character(const Character &rhs)
 {
-	std::cout << rhs.name << " Character copy constructor called" << std::endl;
+//	std::cout << rhs.name << " Character copy constructor called" << std::endl;
 	*this = rhs;
 	return ;
 }
 
 Character	&Character::operator=( const Character &rhs)
 {
-	std::cout << "Character copy assignement operator called" << std::endl;
+//	std::cout << "Character copy assignement operator called" << std::endl;
 	name = rhs.name;
 	for (int i = 0; i < 4; i++)
 	{
@@ -42,7 +42,7 @@ Character	&Character::operator=( const Character &rhs)
 
 Character::~Character()
 {
-	std::cout << name << " destructor called" << std::endl;
+//	std::cout << name << " destructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 	//	if (inventory[i])
@@ -58,9 +58,13 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
+	if (!m)
+	{
+		std::cout << name << " can't add a thing that isn't a Materia" << std::endl;
+		return ;
+	}
 	for (int i = 0; i < 4; i++)
 	{
-	//	if ((inventory[i]->getType()).compare("ice") != 0 && (inventory[i]->getType()).compare("cure") != 0)
 		if (inventory[i] == NULL)
 		{
 			inventory[i] = m;
@@ -73,25 +77,24 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx)
 {
-	if (idx < 4 && idx > 0 && ((inventory[idx]/*->getType()).compare("ice") == 0*/) || (inventory[idx]/*->getType()).compare("ice") == 0*/)))
-	{
-		delete inventory[idx];
+	if (idx < 4 && idx > 0 && ((inventory[idx]) || (inventory[idx])))
 		inventory[idx] = NULL;
-	}	
 	return ;
 }
 
 void Character::use(int idx, ICharacter& target)
 {
-	if (idx >= 4 && idx <= 0)
-	       return ;
-	if (!(inventory[idx]))
-	       return ;
-	if (((inventory[idx]->getType()).compare("cure") == 0 || (inventory[idx]->getType()).compare("ice") == 0))
+	if (idx >= 4 || idx < 0)
 	{
-		inventory[idx]->use(target);
-		delete inventory[idx];
-		inventory[idx] = NULL;
+		std::cout << name <<" use on an invalid index" << std::endl;
+		return ;
 	}
+	if (!(inventory[idx]))
+	{
+		std::cout << name <<" use on an empty slot" << std::endl;
+		return ;
+	}
+	if (((inventory[idx]->getType()).compare("cure") == 0 || (inventory[idx]->getType()).compare("ice") == 0))
+		inventory[idx]->use(target);
 	return ;
 }

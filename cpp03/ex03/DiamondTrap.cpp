@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 13:39:42 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/21 13:58:05 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/25 12:58:47 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,22 +69,22 @@ DiamondTrap::~DiamondTrap()
 	return ;
 }
 
-void	DiamondTrap::attack( const std::string &target )
-{
-	if (hp == 0)
-	{
-		std::cout << "DiamondTrap "<< name << " can't attacks " << target << ", Hit point = " << hp << std::endl;
-		return ;
-	}
-	if (ep == 0)
-	{
-		std::cout << "DiamondTrap "<< name << " can't attacks " << target << ", Energie point = " << ep << std::endl;
-		return ;
-	}
-	std::cout << "DiamondTrap "<< name << " attacks " << target << ", causing " << ad << " points of damage!" << std::endl;
-	ep -= 1;
-	return ;
-}
+//void	DiamondTrap::attack( const std::string &target )
+//{
+//	if (hp == 0)
+//	{
+//		std::cout << "DiamondTrap "<< name << " can't attacks " << target << ", Hit point = " << hp << std::endl;
+//		return ;
+//	}
+//	if (ep == 0)
+//	{
+//		std::cout << "DiamondTrap "<< name << " can't attacks " << target << ", Energie point = " << ep << std::endl;
+//		return ;
+//	}
+//	std::cout << "DiamondTrap "<< name << " attacks " << target << ", causing " << ad << " points of damage!" << std::endl;
+//	ep -= 1;
+//	return ;
+//}
 
 void	DiamondTrap::takeDamage( unsigned int amount )
 {

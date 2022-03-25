@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 12:17:26 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/21 14:09:37 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/25 12:53:54 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class	ScavTrap : virtual public ClapTrap
 		ScavTrap &operator=(const ScavTrap &rhs);
 		~ScavTrap();
 		
-		void	attack( const std::string& target);
+		virtual	void	attack( const std::string& target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 

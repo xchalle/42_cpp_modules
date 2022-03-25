@@ -1,53 +1,87 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/15 14:04:11 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/21 18:09:29 by xchalle          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "MateriaSource.hpp"
-#include "Cure.hpp"
+#include "AMateria.hpp"
+#include "Character.hpp"
 #include "Ice.hpp"
+#include "Cure.hpp"
+#include "MateriaSource.hpp"
 
-int main()
+int	main(void)
 {
+	
+	std::cout << "------------Test 1------------" << std::endl;
+	std::cout << std::endl;
+
 	IMateriaSource* src = new MateriaSource();
-	IMateriaSource* src2;
-	std::cout << std::endl << "-------add Materia to MateriaSource-------" << std::endl;
+
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
-	src2 = src;
-	Character* me = new Character("me");
+
+	ICharacter* me = new Character("me");
+
 	AMateria* tmp;
-	std::cout << std::endl << "-------add Materia to Character-------" << std::endl;
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	ICharacter* me2 = new Character(*me);
+
 	ICharacter* bob = new Character("bob");
-	std::cout << std::endl << "-------attack me2-------" << std::endl;
+
 	me->use(0, *bob);
-	me->unequip(1);
-	me->use(2, *bob);
-	ICharacter* me3 = new Character(*me);
-	std::cout << std::endl << "-------attack me2-------" << std::endl;
-	me2->use(0, *bob);
-	me2->use(1, *bob);
-	std::cout << std::endl << "------attack me3-------" << std::endl;
-	me3->use(0, *bob);
-	me3->use(1, *bob);
-	delete me3;
+	me->use(1, *bob);
+
 	delete bob;
-	delete me2;
 	delete me;
 	delete src;
-	return 0;
+	
+	std::cout << std::endl;
+	std::cout << "------------Test 2------------" << std::endl;
+	std::cout << std::endl;
+
+	MateriaSource* s = new MateriaSource();
+
+	ICharacter* joj = new Character("joj");
+	ICharacter* joblux = new Character("joblux");
+
+	AMateria*		tmp_materia;
+
+	for (int i = 0; i < 4; i++)
+	{
+		if ((i % 2) == 0)
+			tmp_materia = new Ice();
+		else
+			tmp_materia = new Cure();
+		s->learnMateria(tmp_materia);
+	}
+	tmp_materia = new Ice();
+	s->learnMateria(tmp_materia); //inventory is full
+	delete tmp_materia;
+
+	std::cout << std::endl;
+
+	AMateria* fire = s->createMateria("fire");
+	joj->equip(fire);
+	joj->use(0, *joblux);
+
+	std::cout << std::endl;
+
+	AMateria* ice = s->createMateria("ice");
+
+	joj->equip(ice);
+	joj->use(0, *joblux);
+	joj->use(9, *joblux);
+	joj->use(1, *joblux);
+
+	AMateria* cure = s->createMateria("cure");
+
+	joj->equip(cure);
+	joj->use(1, *joblux);
+	joj->unequip(1);
+
+	joblux->equip(cure);
+	joblux->use(0, *joj);
+
+	delete s;
+	delete joj;
+	delete joblux;
+
+	return (0);
 }

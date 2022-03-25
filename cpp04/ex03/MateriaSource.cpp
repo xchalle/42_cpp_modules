@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 13:25:19 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/17 12:10:56 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/25 13:56:22 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 MateriaSource::MateriaSource()
 {
-	std::cout << "MateriaSource constructor called" << std::endl;
+//	std::cout << "MateriaSource constructor called" << std::endl;
 	nbr_stock = 0;
 	for (int i = 0; i < 4; i++)
 		stock[i] = NULL;
@@ -25,18 +25,18 @@ MateriaSource::~MateriaSource()
 {
 	for (int i = 0; i < 4; i++)
 		delete stock[i];
-	std::cout << "MateriaSource destructor called" << std::endl;
+//	std::cout << "MateriaSource destructor called" << std::endl;
 }
 
 MateriaSource::MateriaSource(const MateriaSource &rhs)
 {
-	std::cout << "MateriaSource copy constructor called" << std::endl;
+//	std::cout << "MateriaSource copy constructor called" << std::endl;
 	*this = rhs;
 }
 
 MateriaSource &MateriaSource::operator=(const MateriaSource &rhs)
 {
-	std::cout << "MateriaSource copy assignement operator called" << std::endl;
+//	std::cout << "MateriaSource copy assignement operator called" << std::endl;
 	for (int i = 0; i < rhs.nbr_stock; i++)
 	{
 		if (rhs.stock[i])
@@ -49,7 +49,10 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &rhs)
 void MateriaSource::learnMateria(AMateria* m)
 {
 	if (nbr_stock > 3)
-	       return ;	
+	{
+		std::cout << "Materia source is full" << std::endl; 
+	       return ;
+	}
 	stock[nbr_stock] = m;
 	nbr_stock++;
 	return ;

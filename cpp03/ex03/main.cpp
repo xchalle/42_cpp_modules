@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 11:25:39 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/21 14:05:26 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/25 13:06:46 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,9 @@ int main()
 	DiamondTrap c(a);
 	DiamondTrap b("Wally");
 
-	//a.attack("Wally");
-	//a.attack("Wally");
-	//a.attack("Wally");
-	//a.attack("Wally");
-	//a.attack("Wally");
-	//a.attack("Wally");
-	//a.attack("Wally");
-	//a.attack("Wally");
-	//a.attack("Wally");
-	//a.attack("Wally");
-	//a.attack("Wally");
-	//a.attack("Wally");
-	//a.attack("Wally");
-	//c.attack("ROB");
-	//c.attack("ROB");
-	//c.attack("ROB");
-	//c.attack("ROB");
-	c.attack("ROB");
+	for (int i = 0; i < 52; i++)
+		a.ScavTrap::attack("Wally");
+	c.ScavTrap::attack("ROB");
 	c.beRepaired(10);
 	c.takeDamage(4);
 	c.beRepaired(2147483647);

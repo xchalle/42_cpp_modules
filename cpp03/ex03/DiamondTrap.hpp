@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 13:25:02 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/21 14:05:49 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/25 13:00:56 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ class DiamondTrap : public FragTrap, public ScavTrap
 		DiamondTrap(const std::string name, const std::string clapname);
 		DiamondTrap(const DiamondTrap &rhs);
 		DiamondTrap &operator=(const DiamondTrap &rhs);
-		~DiamondTrap();
+		virtual ~DiamondTrap();
 		
-//		void	attack(const std::string &target);
+//		virtual void	attack(const std::string &target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 
