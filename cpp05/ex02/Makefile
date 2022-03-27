@@ -6,7 +6,7 @@
 #    By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/14 13:55:04 by xchalle           #+#    #+#              #
-#    Updated: 2022/03/22 17:02:20 by xchalle          ###   ########.fr        #
+#    Updated: 2022/03/27 16:03:28 by xchalle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,25 +14,25 @@ SRC =	Bureaucrat.cpp \
 	AForm.cpp \
 	PresidentialPardonForm.cpp \
 	ShrubberyCreationForm.cpp \
-	RobotomyRequest.cpp \
+	RobotomyRequestForm.cpp \
 	main.cpp
 	
 
 NAME = Bureaucrat
 
-XXFLAGS = -Wall -Werror -Wextra -std=c++98
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
-XX = c++ $(XXFLAGS)
+CXX = c++ 
 
 OBJ = $(SRC:.cpp=.o)
 
 all:	$(NAME)
 
-$(%.o): $(%.cpp)
-	$(XX) -o $@ -c $^
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -o $@ -c $^
 
 $(NAME): $(OBJ)
-		$(XX) -o $@ $^
+		$(CXX) $(CXXFLAGS) -o $@ $^
 
 clean:
 		rm -f $(OBJ)

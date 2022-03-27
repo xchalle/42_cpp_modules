@@ -1,43 +1,131 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 13:24:46 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/22 16:26:02 by xchalle          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-int	main()
+int	main(void)
 {
+	std::cout << std::endl;
+	std::cout << "------------ TEST BUREAUCRAT CLASS ------------" << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << "------------ Test upper limit ------------" << std::endl;
+	std::cout << std::endl;
+
+	Bureaucrat		xchalle("xchalle", 3);
+
+	for (int i = 0; i < 3; i++)
+	{
+		try
+		{
+			xchalle.incrGrade();
+			std::cout << xchalle << std::endl;
+		}
+		catch (std::exception const & e)
+		{
+			std::cout << e.what() << std::endl;
+		}
+	}
+
+	std::cout << std::endl;
+	std::cout << "------------ Test lower limit ------------" << std::endl;
+	std::cout << std::endl;
+
+	Bureaucrat		dylan("dylan", 148);
+
+	for (int i = 0; i < 3; i++)
+	{
+		try
+		{
+			dylan.decrGrade();
+			std::cout << dylan << std::endl;
+		}
+		catch (std::exception const & e)
+		{
+			std::cout << e.what() << std::endl;
+		}
+	}
+
+	std::cout << std::endl;
+	std::cout << "------------ Test invalid contructor value ------------" << std::endl;
+	std::cout << std::endl;
+
 	try
 	{
-		Bureaucrat alain("Alain", 140);
-		Bureaucrat alain2;
-		Form	form;
-		Form	testform("testform", 1, 1);
-
-			
-		alain2 = alain;
-		alain.decrGrade();
-		std::cout << alain <<std::endl;
-		std::cout << alain2 <<std::endl;
-		Bureaucrat john("John", 1);
-		std::cout << testform << std::endl;
-		john.signForm(form);
-		std::cout << form << std::endl;
-		alain.signForm(form);
-		alain.signForm(testform);
-//	john.incrGrade();
-	//	std::cout << john <<std::endl;
+		Bureaucrat		uncle("uncle", 1000);
+		std::cout << uncle << std::endl;
 	}
-	catch (const std::exception& e)
+	catch (std::exception const & e)
 	{
 		std::cout << e.what() << std::endl;
+	}
+
+	try
+	{
+		Bureaucrat		uncle("uncle", 0);
+		std::cout << uncle << std::endl;
+	}
+	catch (std::exception const & e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << std::endl;
+	std::cout << "------------ TEST FORM CLASS ------------" << std::endl;
+	std::cout << std::endl;
+
+	std::cout << std::endl;
+	std::cout << "------------ Test too low to sign ------------" << std::endl;
+	std::cout << std::endl;
+	try
+	{
+		Bureaucrat		goodGuy("good guy", 31);
+		Form			plantTree("plant tree", 30, 40);
+
+		std::cout << goodGuy << std::endl;
+		goodGuy.signForm(plantTree);
+		goodGuy.incrGrade();
+		std::cout << goodGuy << std::endl;
+		goodGuy.signForm(plantTree);
+		std::cout << plantTree << std::endl;
+		xchalle.signForm(plantTree);
+		std::cout << plantTree << std::endl;
+	}
+	catch (std::exception const & e)
+	{
+		std::cout << e.what();
+	}
+	std::cout << std::endl;
+	std::cout << "------------ Test invalid constructor value ------------" << std::endl;
+	std::cout << std::endl;
+	try
+	{
+		const Form		invalid_form = Form("invalid form", 0, 30);
+	}
+	catch (std::exception const & e)
+	{
+		std::cout << e.what();
+	}
+	try
+	{
+		const Form		invalid_form = Form("invalid form", 30, 0);
+	}
+	catch (std::exception const & e)
+	{
+		std::cout << e.what();
+	}
+	try
+	{
+		const Form		invalid_form = Form("invalid form", 151, 40);
+	}
+	catch (std::exception const & e)
+	{
+		std::cout << e.what();
+	}
+	try
+	{
+		const Form		invalid_form = Form("invalid form", 20, 151);
+	}
+	catch (std::exception const & e)
+	{
+		std::cout << e.what();
 	}
 	return (0);
 }

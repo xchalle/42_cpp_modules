@@ -1,37 +1,120 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 13:24:46 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/22 17:40:36 by xchalle          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "PresidentialPardonForm.hpp"
+#include "Bureaucrat.hpp"
+#include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
-#include "Aform.hpp"
-#include "Bureaucrat.hpp"
+#include "PresidentialPardonForm.hpp"
 
-int	main()
+int	main(void)
 {
+	std::cout << std::endl;
+	std::cout << "------------ TEST BUREAUCRAT CLASS ------------" << std::endl;
+	std::cout << std::endl;
+
+	std::cout << std::endl;
+	std::cout << "------------ Test upper limit ------------" << std::endl;
+	std::cout << std::endl;
+
+	Bureaucrat		xchalle("xchalle", 3);
+
+	for (int i = 0; i < 3; i++)
+	{
+		try
+		{
+			xchalle.incrGrade();
+			std::cout << xchalle;
+		}
+		catch (std::exception const & e)
+		{
+			std::cout << e.what();
+		}
+	}
+
+	std::cout << std::endl;
+	std::cout << "------------ Test lower limit ------------" << std::endl;
+	std::cout << std::endl;
+
+	Bureaucrat		dylan("dylan", 148);
+
+	for (int i = 0; i < 3; i++)
+	{
+		try
+		{
+			dylan.decrGrade();
+			std::cout << dylan;
+		}
+		catch (std::exception const & e)
+		{
+			std::cout << e.what();
+		}
+	}
+
+	std::cout << std::endl;
+	std::cout << "------------ Test invalid contructor value ------------" << std::endl;
+	std::cout << std::endl;
+
 	try
 	{
-		Bureaucrat alain("Alain", 140);
-		Bureaucrat alain2 = alain;
-		alain.decrGrade();
-		std::cout << alain <<std::endl;
-		std::cout << alain2 <<std::endl;
-		Bureaucrat john("John", 1);
-		john.incrGrade();
-		std::cout << john <<std::endl;
+		Bureaucrat		uncle("uncle", 1000);
+		std::cout << uncle;
 	}
-	catch (const std::exception& e)
+	catch (std::exception const & e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << e.what();
+	}
+
+	try
+	{
+		Bureaucrat		uncle("uncle", 0);
+		std::cout << uncle;
+	}
+	catch (std::exception const & e)
+	{
+		std::cout << e.what();
+	}
+
+	std::cout << std::endl;
+	std::cout << "------------ Test FORMS ------------" << std::endl;
+	std::cout << std::endl;
+
+	std::cout << std::endl;
+	std::cout << "------------ Test execute signed form ------------" << std::endl;
+	std::cout << std::endl;
+
+	try
+	{
+		Bureaucrat					joj("joj", 1);
+		Bureaucrat					joblux("joblux", 150);
+
+		ShrubberyCreationForm		tree("tree");
+		RobotomyRequestForm			robotomy("robotomy");
+		PresidentialPardonForm		presidential("joj");
+
+		joj.executeForm(tree);
+		joj.executeForm(robotomy);
+		joj.executeForm(presidential);
+
+		std::cout << std::endl;
+
+		joj.signForm(tree);
+		joj.signForm(robotomy);
+		joj.signForm(presidential);
+
+		std::cout << std::endl;
+
+		joj.executeForm(tree);
+		joj.executeForm(robotomy);
+		joj.executeForm(presidential);
+
+		std::cout << std::endl;
+
+		joblux.executeForm(tree);
+		joblux.executeForm(robotomy);
+		joblux.executeForm(presidential);
+		
+	}
+	catch (std::exception const & e)
+	{
+		std::cout << e.what();
 	}
 	return (0);
 }

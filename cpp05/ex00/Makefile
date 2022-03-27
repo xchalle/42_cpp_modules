@@ -6,12 +6,11 @@
 #    By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/14 13:55:04 by xchalle           #+#    #+#              #
-#    Updated: 2022/03/27 16:02:22 by xchalle          ###   ########.fr        #
+#    Updated: 2022/03/27 15:05:48 by xchalle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC =	Bureaucrat.cpp \
-	Form.cpp \
 	main.cpp
 	
 

@@ -6,30 +6,30 @@
 #    By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/14 13:55:04 by xchalle           #+#    #+#              #
-#    Updated: 2022/03/08 13:24:45 by xchalle          ###   ########.fr        #
+#    Updated: 2022/03/25 15:15:49 by xchalle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC =	main.cpp \
 	ClapTrap.cpp \
-	FragTrap.cpp \
-	ScavTrap.cpp
+	ScavTrap.cpp \
+	FragTrap.cpp 
 
 NAME = FragTrap
 
-XXFLAGS = -Wall -Werror -Wextra -std=c++98
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
-XX = c++ $(XXFLAGS)
+CXX = c++
 
 OBJ = $(SRC:.cpp=.o)
 
 all:	$(NAME)
 
-$(%.o): $(%.cpp)
-	$(XX) -o $@ -c $^
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -o $@ -c $^
 
 $(NAME): $(OBJ)
-		$(XX) -o $@ $^
+		$(CXX) $(CXXFLAGS) -o $@ $^
 
 clean:
 		rm -f $(OBJ)

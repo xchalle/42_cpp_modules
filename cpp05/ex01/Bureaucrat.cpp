@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 14:54:59 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/22 16:26:41 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/27 15:20:33 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,10 +81,15 @@ void	Bureaucrat::decrGrade()
 
 void	Bureaucrat::signForm(Form &form)
 {
-	if (form.isSigned())
-		throw std::invalid_argument(name + " couldn't sign " + form.getName() + " because form signed yet");
-	form.beSigned(*this);
-	std::cout << name << " signed " << form.getName() << std::endl;
+	try
+	{
+		form.beSigned(*this);
+		std::cout << name << " signed " << form.getName() << std::endl;
+	}
+	catch (const std::exception & e)
+	{
+		std::cout << name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl; 
+	}
 }
 
 std::ostream&	operator<<(std::ostream& stream, const Bureaucrat &bureaucrat)

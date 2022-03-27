@@ -6,12 +6,12 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 13:25:02 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/25 13:00:56 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/25 15:14:36 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	_DIAMONDTRAP_H_
-# define _DIANONDTRAP_H_
+#ifndef	DIAMONDTRAP_H
+# define DIAMONDTRAP_H
 
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"

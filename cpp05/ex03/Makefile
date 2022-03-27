@@ -6,12 +6,16 @@
 #    By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/14 13:55:04 by xchalle           #+#    #+#              #
-#    Updated: 2022/03/27 16:02:22 by xchalle          ###   ########.fr        #
+#    Updated: 2022/03/27 20:52:41 by xchalle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC =	Bureaucrat.cpp \
-	Form.cpp \
+	AForm.cpp \
+	PresidentialPardonForm.cpp \
+	ShrubberyCreationForm.cpp \
+	RobotomyRequestForm.cpp \
+	Intern.cpp \
 	main.cpp
 	
 
@@ -19,7 +23,7 @@ NAME = Bureaucrat
 
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
-CXX = c++
+CXX = c++ 
 
 OBJ = $(SRC:.cpp=.o)
 

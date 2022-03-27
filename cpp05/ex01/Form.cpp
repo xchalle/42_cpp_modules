@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:22:32 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/22 14:44:34 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/27 15:17:56 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ bool	Form::isSigned() const
 
 void	Form::beSigned(Bureaucrat& bureaucrat)
 {	
+	if (isSigned() == true)
+		throw std::invalid_argument("form signed yet");
 	if ((bureaucrat.getGrade()) <= s_grade)
 		_signed = true;
 	else

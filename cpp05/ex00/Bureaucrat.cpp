@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 14:54:59 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/20 18:33:47 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/27 15:09:34 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,6 @@ void	Bureaucrat::decrGrade()
 
 std::ostream&	operator<<(std::ostream& stream, const Bureaucrat &bureaucrat)
 {
-	stream << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
+	stream << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << " ";
 	return (stream);
 }
