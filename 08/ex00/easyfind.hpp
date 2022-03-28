@@ -18,14 +18,11 @@ class NoMemberInContainer : public std::exception
 template < typename T>
 int	easyfind(T & src, int nbr)
 {
-	typename T::iterator it;
+	typename T::iterator it = std::find(src.begin(), src.end(), nbr);
 	typename T::iterator ite = src.end();
-	for (it = src.begin() ; it != ite; it++)
-	{
-		if (*it == nbr)
-			return (*it);
-	}
-	throw NoMemberInContainer();
+	if (it == ite)
+		throw NoMemberInContainer();
+	return (*it);
 }
 
 #endif
