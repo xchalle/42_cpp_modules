@@ -27,6 +27,10 @@ class Intern
 	AForm* makeForm(std::string name, std::string target);
 	protected:
 	private:
+	AForm* presidential(std::string target);
+	AForm* shrubbery(std::string target);
+	AForm* robotomy(std::string target);
+	
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:22:32 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/27 15:17:56 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/28 11:27:22 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	Form::beSigned(Bureaucrat& bureaucrat)
 	if ((bureaucrat.getGrade()) <= s_grade)
 		_signed = true;
 	else
-		throw Form::GradeTooLowException();
+		throw Form::GradeTooHighException();
 }
 
 std::ostream&	operator<<(std::ostream& stream, const Form &form)

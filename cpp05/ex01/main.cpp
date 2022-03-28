@@ -101,7 +101,7 @@ int	main(void)
 	}
 	catch (std::exception const & e)
 	{
-		std::cout << e.what();
+		std::cout << e.what() << std::endl;
 	}
 	try
 	{
@@ -109,7 +109,7 @@ int	main(void)
 	}
 	catch (std::exception const & e)
 	{
-		std::cout << e.what();
+		std::cout << e.what() << std::endl;
 	}
 	try
 	{
@@ -117,7 +117,7 @@ int	main(void)
 	}
 	catch (std::exception const & e)
 	{
-		std::cout << e.what();
+		std::cout << e.what() << std::endl;
 	}
 	try
 	{
@@ -125,7 +125,7 @@ int	main(void)
 	}
 	catch (std::exception const & e)
 	{
-		std::cout << e.what();
+		std::cout << e.what() << std::endl;
 	}
 	return (0);
 }

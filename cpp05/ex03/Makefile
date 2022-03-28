@@ -6,7 +6,7 @@
 #    By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/14 13:55:04 by xchalle           #+#    #+#              #
-#    Updated: 2022/03/27 20:52:41 by xchalle          ###   ########.fr        #
+#    Updated: 2022/03/28 11:56:16 by xchalle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRC =	Bureaucrat.cpp \
 	main.cpp
 	
 
-NAME = Bureaucrat
+NAME = Intern
 
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 

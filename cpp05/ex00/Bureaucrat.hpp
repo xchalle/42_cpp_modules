@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 18:36:55 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/27 15:06:07 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/28 11:16:55 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ class Bureaucrat
 	unsigned int	getGrade() const;
 	void		incrGrade();
 	void		decrGrade();
-	void		signForm(Form &form);
 
 	protected:
 	private:

@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:14:55 by xchalle           #+#    #+#             */
-/*   Updated: 2022/03/22 14:43:06 by xchalle          ###   ########.fr       */
+/*   Updated: 2022/03/28 11:27:39 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class Form
 		public:
 		virtual const char* what() const throw()
 		{
-			return ("grade too high for this");
+			return ("form grade too high for this");
 		}
 	};
 	class GradeTooLowException : public std::exception
@@ -43,7 +43,7 @@ class Form
 		public:
 		virtual const char* what() const throw()
 		{
-			return ("grade too low for this");
+			return ("form grade too low for this");
 		}
 	};
 

@@ -27,25 +27,30 @@ Intern::~Intern()
 	return ;
 }
 
+AForm*	Intern::presidential(std::string target)
+{
+	return (new PresidentialPardonForm(target));
+}
+
+AForm*	Intern::shrubbery(std::string target)
+{
+	return (new ShrubberyCreationForm(target));
+}
+AForm*	Intern::robotomy(std::string target)
+{
+	return (new RobotomyRequestForm(target));
+}
+
 AForm*	Intern::makeForm(std::string name, std::string target)
 {
 	int i = 0;
 	std::string tmp[3] = {"presidential pardon", "shrubbery creation", "robotomy request"};
+	AForm*	(Intern::*fct[3])(std::string) = { (&Intern::presidential), (&Intern::shrubbery), (&Intern::robotomy)};
 	while (i < 3)
 	{
 		if (name == tmp[i])
-			break;
+			return (((*this).*fct[i])(target));
 		i++;
 	}
-	switch(i)
-	{
-		case 0:
-			return (new PresidentialPardonForm(target));
-		case 1:
-			return (new ShrubberyCreationForm(target));
-		case 2:
-			return (new RobotomyRequestForm(target));
-		default:
-			throw std::invalid_argument("Form name doesn't exist");
-	}	
+	throw std::invalid_argument("Form name doesn't exist");
 }

@@ -9,8 +9,8 @@ int	main(void)
 	std::cout << std::endl;
 
 	Intern			joj;
-	AForm			*form;
 	Bureaucrat		joblux("joblux", 1);
+	AForm			*form;
 
 	try
 	{
@@ -19,6 +19,36 @@ int	main(void)
 		joblux.signForm(*form);
 		joblux.executeForm(*form);
 		delete form;
+	}
+	catch(std::exception const & e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
+	AForm			*form0;
+
+	try
+	{
+		form0 = joj.makeForm("shrubbery creation", "joblux");
+		std::cout << *form0 << std::endl;
+		joblux.signForm(*form0);
+		joblux.executeForm(*form0);
+		delete form0;
+	}
+	catch(std::exception const & e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
+	AForm			*form1;
+
+	try
+	{
+		form1 = joj.makeForm("robotomy request", "joblux");
+		std::cout << *form1 << std::endl;
+		joblux.signForm(*form1);
+		joblux.executeForm(*form1);
+		delete form1;
 	}
 	catch(std::exception const & e)
 	{
