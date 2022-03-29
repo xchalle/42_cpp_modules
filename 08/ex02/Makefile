@@ -6,13 +6,13 @@
 #    By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/14 13:55:04 by xchalle           #+#    #+#              #
-#    Updated: 2022/03/29 14:56:40 by xchalle          ###   ########.fr        #
+#    Updated: 2022/03/29 16:51:29 by xchalle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC =	main.cpp
+SRC =	main.cpp \
 
-NAME = Array
+NAME = Mutant
 
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 

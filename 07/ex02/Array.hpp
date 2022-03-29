@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 template< typename T >
 class Array
@@ -29,7 +30,7 @@ _size = n;};
 	{
 		_size = rhs._size;
 		this->array = new T[this->_size]();
-		for (int i = 0; i < this->_size; i++)
+		for (unsigned int i = 0; i < this->_size; i++)
 			this->array[i] = rhs.array[i];
 		return (*this);
 	};
